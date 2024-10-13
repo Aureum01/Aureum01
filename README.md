@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @Aureum01
-- 👀 I’m interested in criminology ...
+- 👀 Graduate of Criminology & Information Systems ...
 -  ✌  VDP HackerOne participate
 - 🎁 TryHackMe
 - 🎁 HacktheBox
