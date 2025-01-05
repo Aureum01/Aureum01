@@ -6,9 +6,14 @@
 - 👀 **Graduate of Criminology & Information Systems**
 - ✌ **VDP HackerOne Participant**
 - 🎁 **Active on TryHackMe & HackTheBox**
-- 🌱 **Learning:**  
-  `ASP.NET C#`, `SQL`, `Python`, `Bash`, `Ruby`, `Node.js`, `Java`, `Assembly`, `GoLang`, `Powershell`, `PHP`  
 - 💞 **Collaborating On:** Python, Powershell, SQL projects  
+
+
+### Favorites
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&pause=1000&color=F7B24D&center=true&vCenter=true&width=800&lines=Ruby+%7C+Python+%7C+Rust;Ruby+on+Rails+%7C+Django+%7C+Flask+%7C+Flet;HTML+%26+CSS+%7C+JavaScript+%7C+Node.js;Firebase+Cloud+Integration;C%23+%7C+Python+(Rarely);AWS+%26+Azure+(Essentials+Only)" alt="Skills Animation">
+</div>
+
 
 ---
 
@@ -21,8 +26,7 @@
 ---
 
 ### 📫 How to Reach Me  
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/yourprofile)
-[![Twitter](https://img.shields.io/badge/-Twitter-%231DA1F2?style=flat&logo=twitter&logoColor=white)](https://twitter.com/yourprofile)
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-blue?style=flat&logo=linkedin)]([https://www.linkedin.com/in/yourprofile](https://www.linkedin.com/in/roshane-rodney-563638228/))
 
 ---
 
@@ -31,7 +35,3 @@
   <img src="https://github.com/Aureum01/Aureum01/blob/main/assets/animation.gif" alt="cool animation" />
 </div>
 
-<!-- Footer -->
-<div align="center">
-  ✨ Special ✨ repository because this appears on your GitHub profile!  
-</div>
