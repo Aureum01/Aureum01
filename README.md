@@ -32,6 +32,9 @@
 
 ### 🎨 Fun Animations  
 <div align="center">
-  <img src="https://github.com/Aureum01/Aureum01/blob/main/assets/animation.gif" alt="cool animation" />
+  <a href="https://giphy.com/gifs/rick-astley-Ju7l5y9osyymQ">
+    <img src="https://media.giphy.com/media/Ju7l5y9osyymQ/giphy.gif" alt="Fun Animation" width="480" height="360" />
+  </a>
 </div>
+
 
