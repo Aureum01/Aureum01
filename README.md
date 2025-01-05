@@ -4,8 +4,9 @@
 
 ### 🌟 About Me  
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&pause=1000&color=34B4A7&width=700&lines=Criminology+%26+Info+Systems+Graduate;Experienced+Bug+Bounty+Hunter;Bugcrowd+%7C+HackerOne+%7C+Apple+%7C+Open+Bug+Bounty;Veteran+of+TryHackMe+%26+HackTheBox;Collaborating+on+Python%2C+Powershell%2C+SQL+projects!" alt="About Me Animation">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=2000&pause=500&color=34B4A7&width=700&lines=Criminology+%26+Info+Systems+Graduate;Experienced+Bug+Bounty+Hunter;Bugcrowd+%7C+HackerOne+%7C+Apple+%7C+Open+Bug+Bounty;Veteran+of+TryHackMe+%26+HackTheBox;Collaborating+on+many+more+projects!" alt="About Me Animation">
 </div>
+
 
 ---
 
