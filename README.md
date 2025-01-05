@@ -3,17 +3,16 @@
 ---
 
 ### 🌟 About Me  
-- 👀 **Graduate of Criminology & Information Systems**
-- ✌ **VDP HackerOne Participant**
-- 🎁 **Active on TryHackMe & HackTheBox**
-- 💞 **Collaborating On:** Python, Powershell, SQL projects  
-
-
-### Favorites
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&pause=1000&color=F7B24D&center=true&vCenter=true&width=800&lines=Ruby+%7C+Python+%7C+Rust;Ruby+on+Rails+%7C+Django+%7C+Flask+%7C+Flet;HTML+%26+CSS+%7C+JavaScript+%7C+Node.js;Firebase+Cloud+Integration;C%23+%7C+Python+(Rarely);AWS+%26+Azure+(Essentials+Only)" alt="Skills Animation">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&pause=1000&color=34B4A7&width=700&lines=Criminology+%26+Info+Systems+Graduate;Experienced+Bug+Bounty+Hunter;Bugcrowd+%7C+HackerOne+%7C+Apple+%7C+Open+Bug+Bounty;Veteran+of+TryHackMe+%26+HackTheBox;Collaborating+on+Python%2C+Powershell%2C+SQL+projects!" alt="About Me Animation">
 </div>
 
+---
+
+### Favorites  
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&pause=1000&color=F7B24D&center=true&vCenter=true&width=800&lines=Ruby+%7C+Python+%7C+Rust;Ruby+on+Rails+%7C+Django+%7C+Flask+%7C+Flet;HTML+%26+CSS+%7C+JavaScript+%7C+Node.js;Firebase+Cloud+Integration;C%23+%7C+Python+(Rarely);AWS+%26+Azure+(Essentials+Only)" alt="Favorites Animation">
+</div>
 
 ---
 
