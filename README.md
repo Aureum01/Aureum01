@@ -7,6 +7,7 @@
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=2000&pause=500&color=34B4A7&width=700&lines=Criminology+%26+Info+Systems+Graduate;Experienced+Bug+Bounty+Hunter;Bugcrowd+%7C+HackerOne+%7C+Apple+%7C+Open+Bug+Bounty;Veteran+of+TryHackMe+%26+HackTheBox;Collaborating+on+many+more+projects!" alt="About Me Animation">
 </div>
 
+<iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=654856" style='border:none;'></iframe>
 
 ---
 
