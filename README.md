@@ -26,7 +26,7 @@ My work combines:
 - OSINT data pipelines  
 - AI-assisted analytical systems  
 
-Previously I worked as an **Intelligence Analyst supporting a Fortune 500 fintech client**, monitoring geopolitical developments across global regions and producing structured risk assessments as a security contractor.
+Previously I worked as an **Corporate Intelligence Analyst**, monitoring geopolitical developments across global regions and producing structured risk assessments as a security contractor.
 
 My work now focuses on building **analytical infrastructure** that improves how intelligence is collected, processed, and interpreted without previous limitations.
 
