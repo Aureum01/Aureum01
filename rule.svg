@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 28" width="860" height="28" role="img" aria-label="Aureum01 Intelligence Systems divider">
+  <defs>
+    <linearGradient id="lineA" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3D3519" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#3D3519" stop-opacity="1"/>
+      <stop offset="80%" stop-color="#3D3519" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#3D3519" stop-opacity="0"/>
+    </linearGradient>
+
+    <style>
+      .mono {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      }
+
+      .node {
+        animation: nodePulse 3s ease-in-out infinite;
+        transform-origin: center;
+      }
+
+      .node2 {
+        animation-delay: 1s;
+      }
+
+      .node3 {
+        animation-delay: 2s;
+      }
+
+      @keyframes nodePulse {
+        0%, 100% {
+          opacity: .3;
+          r: 3;
+        }
+
+        50% {
+          opacity: 1;
+          r: 4.4;
+        }
+      }
+    </style>
+  </defs>
+
+  <rect width="860" height="28" fill="transparent"/>
+
+  <!-- Left line -->
+  <line x1="0" y1="14" x2="315" y2="14" stroke="url(#lineA)" stroke-width="1"/>
+
+  <!-- Center text -->
+  <text
+    x="430"
+    y="17"
+    text-anchor="middle"
+    class="mono"
+    font-size="8"
+    font-weight="700"
+    letter-spacing="2"
+    fill="#ECB913"
+    opacity="0.45">
+    AUREUM01 · INTELLIGENCE SYSTEMS
+  </text>
+
+  <!-- Right line -->
+  <line x1="545" y1="14" x2="860" y2="14" stroke="url(#lineA)" stroke-width="1"/>
+
+  <!-- Nodes -->
+  <circle class="node" cx="325" cy="14" r="3" fill="#ECB913"/>
+  <circle class="node node2" cx="535" cy="14" r="3" fill="#ECB913"/>
+  <circle class="node node3" cx="820" cy="14" r="3" fill="#ECB913"/>
+</svg>
