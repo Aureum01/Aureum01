@@ -95,7 +95,7 @@
         <g transform="translate(830 0)">
           <circle cx="0" cy="32" r="4" fill="#34D399"/>
           <text x="14" y="27" class="mono label">LOCATION</text>
-          <text x="14" y="44" class="mono value green">HJØRRING · DK</text>
+          <text x="14" y="44" class="mono value green">DK</text>
         </g>
 
         <g transform="translate(1020 0)">
