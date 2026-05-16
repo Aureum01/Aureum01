@@ -17,22 +17,14 @@ Building analytical systems that transform global data into actionable insight.
 
 # Intelligence Systems Lab
 
-I design **automation systems, intelligence workflows, and analytical tools** that help analysts understand complex global environments.
+I design **automation systems, intelligence workflows, and analytical tools** that help analysts understand and work more effectively in complex global environments.
 
-My work combines:
 
-- intelligence analysis  
-- automation engineering  
-- OSINT data pipelines  
-- AI-assisted analytical systems  
+Previously I worked as an **Corporate Protective Intelligence Analyst**, monitoring geopolitical developments across global regions and producing structured risk assessments as a security contractor.
 
-Previously I worked as an **Corporate Intelligence Analyst**, monitoring geopolitical developments across global regions and producing structured risk assessments as a security contractor.
+My work now focuses on building **analytical infrastructure** that improves how intelligence is collected, processed, and interpreted without previous limitations for free if possible. 
 
-My work now focuses on building **analytical infrastructure** that improves how intelligence is collected, processed, and interpreted without previous limitations.
-
----
-
-# Core Domains
+## Core Domains
 
 | Domain | Focus |
 |------|------|
@@ -42,65 +34,13 @@ My work now focuses on building **analytical infrastructure** that improves how 
 | **AI Systems** | Local AI models for intelligence and research workflows |
 | **Behavioral Analysis** | Psychological and social pattern analysis |
 
----
-
-# Featured Intelligence Projects
-
-### AI Geopolitical Report Generator
-
-Automated system that produces structured country intelligence briefs using local AI models and open source data.
-
-Capabilities:
-
-- geopolitical monitoring  
-- structured country reports  
-- risk forecasting support  
-- automated intelligence briefs
-
----
-
-### Reddit Sentiment Intelligence Engine
-
-Large-scale analysis tool that extracts narrative trends from online communities.
-
-Used for:
-
-- geopolitical narrative tracking  
-- sentiment analysis  
-- early warning signals
-
----
-
-### CIA Factbook Intelligence API
-
-Structured interface for CIA World Factbook data.
-
-Applications:
-
-- country risk analysis  
-- geopolitical modeling  
-- intelligence dashboards
-
----
-
-### State Department Travel Advisory API
-
-Machine-readable interface for real-time travel advisory intelligence.
-
-Used for:
-
-- corporate risk monitoring  
-- crisis response analysis  
-- geopolitical forecasting tools
-
----
 
 # Education
 
 **Flagler College**
 
-Bachelor of Arts — Criminology  
-Minor — Computer Information Systems
+Bachelor of Arts: Criminology  
+Minor: Computer Information Systems
 
 Relevant coursework included:
 
@@ -113,9 +53,7 @@ Relevant coursework included:
 - Web Application Development  
 - Business Analytics
 
----
-
-# Technical Stack
+## Technical Stack
 
 ### Programming
 
