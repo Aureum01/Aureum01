@@ -8,7 +8,6 @@ Geopolitical Analysis • OSINT • Automation Engineering • AI-Assisted Intel
 Building analytical systems that transform global data into actionable insight.
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Roshane%20Rodney-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/roshane-rodney-563638228)
-[![Medium](https://img.shields.io/badge/Medium-Articles-black?style=for-the-badge&logo=medium)](https://medium.com/@roshanerodney)
 [![Portfolio](https://img.shields.io/badge/Portfolio-roshanerodney.com-ECB913?style=for-the-badge)](https://roshanerodney.com)
 
 </div>
@@ -35,32 +34,13 @@ My work now focuses on building **analytical infrastructure** that improves how 
 | **Behavioral Analysis** | Psychological and social pattern analysis |
 
 
-# Education
+# Background
 
-**Flagler College**
-
-Bachelor of Arts: Criminology  
-Minor: Computer Information Systems
-
-Relevant coursework included:
-
-- Social Aspects of Terrorism  
-- Conflict Resolution  
-- Criminal Investigations  
-- International Relations  
-- Database Systems  
-- System Analysis & Design  
-- Web Application Development  
-- Business Analytics
+Studied criminology in college with a minor computer information systems. In turn, I became a subject matter expert in geopolitical behavior, international security, international relations, system development, criminology, and the social aspects of terrorism (both macro & micro). Upon graduation, I worked my way up as a security professional to a protective intelligence analyst for a security contracting company, where I've had the opportunity to work with crisis management and GSOC professionals. In high school, I graduated with a license in 911 dispatching and security given my focus on incident response and coordination. This is mirrored by my work ethic to always encourage others to be the dream of who they want to be, while doing the best they can. 
 
 ## Technical Stack
 
-### Programming
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
-![C#](https://img.shields.io/badge/C%23-512BD4?style=flat&logo=csharp&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
-![SQL](https://img.shields.io/badge/SQL-336791?style=flat)
+Whatever is best for my project I will use, even if I have take some time to read the documentation indepth before using it. The goal of my projects is to be the best solution to a problem or idea, and thus, it needs to be efficient. 
 
 ### Systems
 
@@ -68,46 +48,25 @@ Relevant coursework included:
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white)
 ![Node](https://img.shields.io/badge/NodeJS-339933?style=flat&logo=node.js)
 
-### Data & AI
-
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat)
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat)
-
 ### Automation
 
-- Selenium  
-- Puppeteer  
-- Web scraping pipelines  
-- OSINT data collection
+- VBA Pipelines  
+- All-Source Data Collection
+- System Development
 
----
-
-# Research Interests
+### Research Interests
 
 - geopolitical forecasting  
 - intelligence automation  
 - AI-assisted analysis  
 - global risk monitoring  
 - behavioral intelligence
+- reverse intelligence
 
----
+### Writing
 
-# Writing
+I sometimes publish analytical pieces on global systems, geopolitics, and AI (or exposing a malicious system). I would also like to take some time to write horror stories again to retain my imagination. XD
 
-I publish analytical pieces on global systems, geopolitics, and AI.
-
-Articles:
-
-- intelligence analysis methods  
-- global economic systems  
-- AI and automation impacts
-
-**Medium**
-
-https://medium.com/@roshanerodney
-
----
 
 # GitHub Activity
 
@@ -119,15 +78,6 @@ https://medium.com/@roshanerodney
 
 </p>
 
----
-
-# Connect
-
-- LinkedIn  
-- Medium  
-- Portfolio  
-
----
 
 <p align="center">
 
