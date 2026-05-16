@@ -1,0 +1,199 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 160" width="860" height="160" role="img" aria-label="Active build pipeline for Aureum01 projects">
+  <defs>
+    <linearGradient id="panelBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f0e0a"/>
+      <stop offset="60%" stop-color="#181510"/>
+      <stop offset="100%" stop-color="#2e1065"/>
+    </linearGradient>
+
+    <style>
+      .mono {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      }
+
+      .sans {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .label {
+        font-size: 9px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        fill: rgba(236,185,19,.65);
+      }
+
+      .sub {
+        font-size: 8px;
+        letter-spacing: 1px;
+        fill: #6B5F3A;
+      }
+
+      .card-title {
+        font-size: 13px;
+        font-weight: 800;
+        fill: #E8E0CC;
+      }
+
+      .card-desc {
+        font-size: 9.5px;
+        fill: #A89D72;
+      }
+
+      .tag {
+        font-size: 7px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        fill: #6B5F3A;
+      }
+
+      .badge {
+        font-size: 7px;
+        font-weight: 800;
+        letter-spacing: 1px;
+      }
+
+      .blink {
+        animation: blink 1.4s ease-in-out infinite;
+      }
+
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: .3; }
+      }
+
+      .fade1 { animation: fadeIn .7s ease both; }
+      .fade2 { animation: fadeIn .7s ease both; animation-delay: .12s; }
+      .fade3 { animation: fadeIn .7s ease both; animation-delay: .24s; }
+      .fade4 { animation: fadeIn .7s ease both; animation-delay: .36s; }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(8px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="859" height="159" rx="6" fill="url(#panelBg)" stroke="#3D3519"/>
+
+  <g opacity="0.18" stroke="#ECB913" stroke-width="1">
+    <path d="M0 44H860M0 88H860M0 132H860"/>
+    <path d="M44 0V160M88 0V160M132 0V160M176 0V160M220 0V160M264 0V160M308 0V160M352 0V160M396 0V160M440 0V160M484 0V160M528 0V160M572 0V160M616 0V160M660 0V160M704 0V160M748 0V160M792 0V160M836 0V160"/>
+  </g>
+
+  <rect x="14" y="12" width="832" height="24" rx="4" fill="#0f0e0a" stroke="#3D3519"/>
+  <circle class="blink" cx="28" cy="24" r="3.5" fill="#ECB913"/>
+  <text x="40" y="27" class="mono label">ACTIVE BUILD PIPELINE</text>
+  <text x="706" y="27" class="mono sub">AUREUM01 · LOCAL-FIRST TOOLS</text>
+
+  <!-- Card 1: crxreader -->
+  <g class="fade1">
+    <rect x="14" y="48" width="202" height="96" rx="10" fill="#181510" stroke="#3D3519"/>
+    <circle class="blink" cx="30" cy="66" r="4" fill="#ECB913"/>
+    <text x="42" y="70" class="mono card-title">crxreader</text>
+
+    <rect x="143" y="56" width="58" height="17" rx="3" fill="#2a2412" stroke="#5a4712"/>
+    <text x="153" y="68" class="mono badge" fill="#ECB913">ACTIVE</text>
+
+    <text x="28" y="93" class="sans card-desc">
+      <tspan x="28" dy="0">Download, unpack, and inspect</tspan>
+      <tspan x="28" dy="14">Chrome extension source code.</tspan>
+    </text>
+
+    <rect x="28" y="119" width="34" height="14" rx="2" fill="#0f0e0a" stroke="#3D3519"/>
+    <text x="36" y="129" class="mono tag">CLI</text>
+
+    <rect x="68" y="119" width="38" height="14" rx="2" fill="#0f0e0a" stroke="#3D3519"/>
+    <text x="75" y="129" class="mono tag">MCP</text>
+
+    <rect x="112" y="119" width="50" height="14" rx="2" fill="#0f0e0a" stroke="#3D3519"/>
+    <text x="120" y="129" class="mono tag">OSINT</text>
+
+    <rect x="28" y="138" width="160" height="3" rx="1.5" fill="#3D3519"/>
+    <rect x="28" y="138" height="3" rx="1.5" fill="#ECB913">
+      <animate attributeName="width" values="92;126;92" dur="5s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- Card 2: sdta -->
+  <g class="fade2">
+    <rect x="226" y="48" width="202" height="96" rx="10" fill="#181510" stroke="#3D3519"/>
+    <circle cx="242" cy="66" r="4" fill="#60A5FA"/>
+    <text x="254" y="70" class="mono card-title">sdta</text>
+
+    <rect x="351" y="56" width="62" height="17" rx="3" fill="#0b1c2e" stroke="#1e3a5f"/>
+    <text x="360" y="68" class="mono badge" fill="#60A5FA">PyPI</text>
+
+    <text x="240" y="93" class="sans card-desc">
+      <tspan x="240" dy="0">State Department travel data</tspan>
+      <tspan x="240" dy="14">CLI and Python client.</tspan>
+    </text>
+
+    <rect x="240" y="119" width="38" height="14" rx="2" fill="#0f0e0a" stroke="#3D3519"/>
+    <text x="247" y="129" class="mono tag">PyPI</text>
+
+    <rect x="284" y="119" width="34" height="14" rx="2" fill="#0f0e0a" stroke="#3D3519"/>
+    <text x="292" y="129" class="mono tag">API</text>
+
+    <rect x="324" y="119" width="58" height="14" rx="2" fill="#0f0e0a" stroke="#3D3519"/>
+    <text x="331" y="129" class="mono tag">TRAVEL</text>
+
+    <rect x="240" y="138" width="160" height="3" rx="1.5" fill="#3D3519"/>
+    <rect x="240" y="138" height="3" rx="1.5" fill="#60A5FA">
+      <animate attributeName="width" values="116;148;116" dur="5.5s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- Card 3: ucgen -->
+  <g class="fade3">
+    <rect x="438" y="48" width="202" height="96" rx="10" fill="#181510" stroke="#3D3519"/>
+    <circle cx="454" cy="66" r="4" fill="#34D399"/>
+    <text x="466" y="70" class="mono card-title">ucgen</text>
+
+    <rect x="561" y="56" width="64" height="17" rx="3" fill="#0b2a1d" stroke="#145c3d"/>
+    <text x="570" y="68" class="mono badge" fill="#34D399">PyPI</text>
+
+    <text x="452" y="93" class="sans card-desc">
+      <tspan x="452" dy="0">Use case document generator</tspan>
+      <tspan x="452" dy="14">from natural language.</tspan>
+    </text>
+
+    <rect x="452" y="119" width="38" height="14" rx="2" fill="#0f0e0a" stroke="#3D3519"/>
+    <text x="459" y="129" class="mono tag">PyPI</text>
+
+    <rect x="496" y="119" width="34" height="14" rx="2" fill="#0f0e0a" stroke="#3D3519"/>
+    <text x="504" y="129" class="mono tag">CLI</text>
+
+    <rect x="536" y="119" width="42" height="14" rx="2" fill="#0f0e0a" stroke="#3D3519"/>
+    <text x="543" y="129" class="mono tag">DOCS</text>
+
+    <rect x="452" y="138" width="160" height="3" rx="1.5" fill="#3D3519"/>
+    <rect x="452" y="138" width="160" height="3" rx="1.5" fill="#34D399"/>
+  </g>
+
+  <!-- Card 4: systemgen -->
+  <g class="fade4">
+    <rect x="650" y="48" width="196" height="96" rx="10" fill="#181510" stroke="#3D3519"/>
+    <circle cx="666" cy="66" r="4" fill="#A78BFA"/>
+    <text x="678" y="70" class="mono card-title">systemgen</text>
+
+    <rect x="766" y="56" width="64" height="17" rx="3" fill="#1c1233" stroke="#3b246b"/>
+    <text x="775" y="68" class="mono badge" fill="#A78BFA">PyPI</text>
+
+    <text x="664" y="93" class="sans card-desc">
+      <tspan x="664" dy="0">AI context profile generator</tspan>
+      <tspan x="664" dy="14">for coding assistants.</tspan>
+    </text>
+
+    <rect x="664" y="119" width="38" height="14" rx="2" fill="#0f0e0a" stroke="#3D3519"/>
+    <text x="671" y="129" class="mono tag">PyPI</text>
+
+    <rect x="708" y="119" width="28" height="14" rx="2" fill="#0f0e0a" stroke="#3D3519"/>
+    <text x="716" y="129" class="mono tag">AI</text>
+
+    <rect x="742" y="119" width="68" height="14" rx="2" fill="#0f0e0a" stroke="#3D3519"/>
+    <text x="749" y="129" class="mono tag">DEVTOOLS</text>
+
+    <rect x="664" y="138" width="150" height="3" rx="1.5" fill="#3D3519"/>
+    <rect x="664" y="138" width="150" height="3" rx="1.5" fill="#A78BFA"/>
+  </g>
+</svg>
