@@ -1,54 +1,28 @@
-<svg fill="none" viewBox="0 0 820 44" width="820" height="44" xmlns="http://www.w3.org/2000/svg">
-<foreignObject width="100%" height="100%">
-<div xmlns="http://www.w3.org/1999/xhtml">
-<style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  .wrap {
-    width: 820px; height: 44px;
-    background: #0c0a08;
-    position: relative;
-    overflow: hidden;
-  }
-  .rule {
-    position: absolute;
-    top: 16px; left: 30px; right: 30px;
-    height: 1px;
-    background: linear-gradient(to right, transparent, rgba(61,26,0,0.4) 10%, rgba(61,26,0,0.4) 90%, transparent);
-  }
-  .orn {
-    position: absolute;
-    top: 8px; left: 50%;
-    transform: translateX(-50%);
-    font-family: Georgia, serif;
-    font-size: 9px;
-    letter-spacing: 8px;
-    color: rgba(92,34,0,0.45);
-    white-space: nowrap;
-    margin-left: -24px;
-  }
-  .drop {
-    position: absolute;
-    top: 17px;
-    border-radius: 50% 50% 60% 60%;
-    background: #6B0000;
-  }
-  .d1 { left: 155px; width: 7px;  height: 12px; opacity: 0.5;  animation: dp1 3.2s ease-in-out infinite; }
-  .d2 { left: 296px; width: 5px;  height: 10px; opacity: 0.4;  animation: dp2 4.1s ease-in-out infinite 1s; }
-  .d3 { left: 407px; width: 8px;  height: 14px; opacity: 0.55; animation: dp1 3.6s ease-in-out infinite 2s; background: #8B0000; }
-  .d4 { left: 536px; width: 5px;  height: 10px; opacity: 0.4;  animation: dp2 2.9s ease-in-out infinite 0.5s; }
-  .d5 { left: 677px; width: 6px;  height: 12px; opacity: 0.5;  animation: dp1 4.4s ease-in-out infinite 1.8s; }
-  @keyframes dp1 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
-  @keyframes dp2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(11px)} }
-</style>
-<div class="wrap">
-  <div class="rule"></div>
-  <div class="orn">✦  ☽  ✦</div>
-  <div class="drop d1"></div>
-  <div class="drop d2"></div>
-  <div class="drop d3"></div>
-  <div class="drop d4"></div>
-  <div class="drop d5"></div>
-</div>
-</div>
-</foreignObject>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 36" width="820" height="36">
+  <rect width="820" height="36" fill="#0b0907"/>
+  <!-- horizontal rule -->
+  <line x1="30" y1="18" x2="790" y2="18" stroke="#2d1500" stroke-width="0.8" opacity="0.45"/>
+  <!-- ornament -->
+  <text x="410" y="23" font-family="Georgia,serif" font-size="11" fill="#4a2200"
+        text-anchor="middle" opacity="0.55">✦  ☽  ✦</text>
+  <!-- drip 1 -->
+  <ellipse cx="145" cy="20" rx="3.5" ry="6" fill="#6B0000" opacity="0.5">
+    <animateTransform attributeName="transform" type="translate"
+      values="0,0;0,7;0,0" dur="3.2s" repeatCount="indefinite"/>
+  </ellipse>
+  <!-- drip 2 -->
+  <ellipse cx="295" cy="20" rx="2.5" ry="5" fill="#8B0000" opacity="0.4">
+    <animateTransform attributeName="transform" type="translate"
+      values="0,0;0,10;0,0" dur="4.1s" begin="-1s" repeatCount="indefinite"/>
+  </ellipse>
+  <!-- drip 3 -->
+  <ellipse cx="545" cy="20" rx="2.5" ry="5" fill="#8B0000" opacity="0.4">
+    <animateTransform attributeName="transform" type="translate"
+      values="0,0;0,9;0,0" dur="2.9s" begin="-0.5s" repeatCount="indefinite"/>
+  </ellipse>
+  <!-- drip 4 -->
+  <ellipse cx="672" cy="20" rx="3" ry="6" fill="#6B0000" opacity="0.5">
+    <animateTransform attributeName="transform" type="translate"
+      values="0,0;0,8;0,0" dur="4.4s" begin="-1.8s" repeatCount="indefinite"/>
+  </ellipse>
 </svg>
