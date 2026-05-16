@@ -146,13 +146,13 @@
         <g transform="translate(1020 0)">
           <circle cx="0" cy="32" r="4" fill="#ECB913"/>
           <text x="14" y="27" class="mono label">PROJECTS</text>
-          <text x="14" y="44" class="mono value">TRAVELRISK · RTIN · MISR</text>
+          <text x="14" y="44" class="mono value">RTIN · Crxreader </text>
         </g>
 
         <g transform="translate(1250 0)">
           <circle cx="0" cy="32" r="4" fill="#60A5FA"/>
           <text x="14" y="27" class="mono label">EDUCATION</text>
-          <text x="14" y="44" class="mono value blue">CRIMINOLOGY + CIS · FLAGLER</text>
+          <text x="14" y="44" class="mono value blue">CRIMINOLOGY + CIS </text>
         </g>
       </g>
     </g>
