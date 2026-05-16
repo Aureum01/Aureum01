@@ -1,221 +1,393 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 820 390" width="820" height="390">
-<foreignObject width="100%" height="100%">
-<div xmlns="http://www.w3.org/1999/xhtml">
-<style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  .scene {
-    width:820px; height:390px;
-    background:#09080600;
-    background: linear-gradient(160deg,#0b0907 0%,#100c07 100%);
-    display:flex; overflow:hidden; border-radius:4px;
-    position:relative;
-  }
-  /* moon */
-  .moon {
-    position:absolute; top:12px; left:264px;
-    width:48px; height:48px; border-radius:50%;
-    background:radial-gradient(circle at 38% 38%,rgba(255,248,220,0.18),transparent 68%);
-    animation:mpulse 7s ease-in-out infinite;
-    pointer-events:none; z-index:1;
-  }
-  @keyframes mpulse{ 0%,100%{opacity:.7} 50%{opacity:1} }
-  /* fireflies */
-  .ff {
-    position:absolute; width:2px; height:2px; border-radius:50%;
-    background:#b89040; opacity:0; z-index:1;
-    animation:ffly var(--d,7s) ease-in-out infinite var(--delay,0s);
-  }
-  @keyframes ffly{
-    0%{opacity:0;transform:translate(0,0)}
-    25%{opacity:.8}
-    50%{opacity:.4;transform:translate(var(--tx,12px),var(--ty,-16px))}
-    75%{opacity:.75}
-    100%{opacity:0;transform:translate(calc(var(--tx,12px)*1.3),calc(var(--ty,-16px)*.5))}
-  }
-  /* tree sway anchored at base */
-  .tree-wrap {
-    transform-origin:50% 98%;
-    animation:sway 9s ease-in-out infinite;
-    position:relative; z-index:2;
-  }
-  @keyframes sway{
-    0%,100%{transform:rotate(-1.2deg)}
-    50%    {transform:rotate(0.9deg)}
-  }
-  /* ASCII pre */
-  pre.t {
-    font-family:'Courier New',Courier,monospace;
-    font-size:9px; line-height:1.20;
-    white-space:pre; user-select:none;
-    letter-spacing:0;
-  }
-  /* colour palette */
-  .tk { color:#5c3318; } /* trunk core */
-  .to { color:#3d2206; } /* trunk outer */
-  .b1 { color:#2e1a06; } /* branch 1 */
-  .b2 { color:#261508; } /* branch 2 */
-  .tw { color:#1e1005; } /* twig */
-  .dl { color:#4a2c10; } /* dead leaf/diamond */
-  .gr { color:#150e04; } /* ground */
-  .ms { color:#221400; } /* mist */
-  .rv { color:#0d0a06; animation:rblink 5s ease-in-out infinite; } /* raven */
-  @keyframes rblink{ 0%,80%,100%{color:#0d0a06} 85%{color:#251508} 90%{color:#0d0a06} }
-  .ey { color:#8B0000; animation:eglow 3.2s ease-in-out infinite; }
-  .e2 { color:#C8A060; animation:eglow 3.2s ease-in-out infinite 1.6s; }
-  @keyframes eglow{ 0%,100%{opacity:.12} 50%{opacity:.95} }
-  /* mist */
-  .mist {
-    position:absolute; bottom:0; left:-30px; right:-30px; height:40px;
-    background:linear-gradient(to top,rgba(45,20,0,.20) 0%,transparent 100%);
-    animation:mdrift 13s ease-in-out infinite; pointer-events:none;
-  }
-  .mist2 {
-    position:absolute; bottom:0; left:-60px; right:-60px; height:26px;
-    background:linear-gradient(to top,rgba(35,15,0,.14) 0%,transparent 100%);
-    animation:mdrift 18s ease-in-out infinite 6s; pointer-events:none;
-  }
-  @keyframes mdrift{ 0%,100%{transform:translateX(0)} 50%{transform:translateX(20px)} }
-  /* left panel */
-  .left {
-    width:345px; flex-shrink:0;
-    position:relative; overflow:hidden;
-    padding:6px 0 0 2px;
-  }
-  /* divider */
-  .div {
-    width:1px; align-self:stretch;
-    background:linear-gradient(to bottom,transparent,rgba(48,26,0,.5) 12%,rgba(48,26,0,.5) 88%,transparent);
-    flex-shrink:0; margin:12px 0;
-  }
-  /* right panel */
-  .right {
-    flex:1; padding:18px 18px 14px 16px;
-    display:flex; flex-direction:column; gap:8px; overflow:hidden;
-  }
-  .sl {
-    font-family:Georgia,serif; font-size:7.5px; letter-spacing:4px;
-    color:rgba(92,42,0,.75); text-transform:uppercase;
-    border-bottom:1px solid rgba(45,26,0,.38); padding-bottom:5px;
-  }
-  .intro {
-    font-family:Georgia,serif; font-size:11px; line-height:1.62; color:#8B7040;
-  }
-  .intro em{ color:#6B5030; font-style:italic; }
-  .dl2 {
-    font-family:Georgia,serif; font-size:7.5px; letter-spacing:3px;
-    color:rgba(92,42,0,.65); text-transform:uppercase;
-    border-top:1px dashed rgba(45,26,0,.28); padding-top:6px; margin-top:1px;
-  }
-  .domains{ display:flex; flex-direction:column; gap:3px; }
-  .dr{ display:flex; gap:3px; }
-  .dk2{
-    background:rgba(24,14,6,.55); border-radius:2px; padding:2px 6px;
-    font-family:Georgia,serif; font-size:9.5px; color:#C8A060;
-    font-weight:bold; min-width:122px;
-  }
-  .dv2{
-    background:rgba(14,9,3,.55); border-radius:2px; padding:2px 6px;
-    font-family:Georgia,serif; font-size:9.5px; color:#7a6030; flex:1;
-  }
-  .sig{
-    font-family:Georgia,serif; font-size:8px;
-    color:rgba(61,34,0,.3); font-style:italic; text-align:right; margin-top:auto;
-  }
-</style>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 820 400" width="820" height="400">
 
-<div class="scene">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0b0907"/>
+      <stop offset="100%" stop-color="#110d07"/>
+    </linearGradient>
+    <radialGradient id="moonglow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff8e0" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#0b0907" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="eyeglow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8B0000" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#8B0000" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mistglow" cx="50%" cy="20%" r="80%">
+      <stop offset="0%" stop-color="#3d1a00" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#0b0907" stop-opacity="0"/>
+    </radialGradient>
 
-  <div class="moon"></div>
+    <!-- Leaf shape — Japanese maple, 5-pointed -->
+    <path id="leaf-a"
+      d="M0,-8 C1,-5 4,-4 3,-1 C5,0 5,3 3,3 C4,5 2,7 0,6
+         C-2,7 -4,5 -3,3 C-5,3 -5,0 -3,-1 C-4,-4 -1,-5 0,-8Z"
+      fill="#C8A060"/>
+    <path id="leaf-b"
+      d="M0,-7 C1.5,-4 4,-3 3.5,-0.5 C5.5,0.5 5,3.5 3,3
+         C3.5,5.5 1.5,7.5 0,6.5 C-1.5,7.5 -3.5,5.5 -3,3
+         C-5,3.5 -5.5,0.5 -3.5,-0.5 C-4,-3 -1.5,-4 0,-7Z"
+      fill="#b8902a"/>
+    <path id="leaf-c"
+      d="M0,-6 C1,-4 3,-3 2.5,-0.5 C4,0 4,3 2.5,2.5
+         C3,5 1.5,6 0,5.5 C-1.5,6 -3,5 -2.5,2.5
+         C-4,3 -4,0 -2.5,-0.5 C-3,-3 -1,-4 0,-6Z"
+      fill="#a07820"/>
 
-  <!-- fireflies -->
-  <div class="ff" style="--d:6.2s;--delay:-1.1s;--tx:16px;--ty:-20px;top:55px;left:72px;"></div>
-  <div class="ff" style="--d:8.4s;--delay:-3.3s;--tx:-13px;--ty:-17px;top:108px;left:192px;"></div>
-  <div class="ff" style="--d:7.1s;--delay:-5.5s;--tx:20px;--ty:-11px;top:175px;left:55px;"></div>
-  <div class="ff" style="--d:9.3s;--delay:-2.2s;--tx:-18px;--ty:-26px;top:88px;left:252px;"></div>
-  <div class="ff" style="--d:6.8s;--delay:-4.6s;--tx:14px;--ty:-19px;top:230px;left:128px;"></div>
-  <div class="ff" style="--d:8.0s;--delay:-7.0s;--tx:-11px;--ty:-14px;top:148px;left:308px;"></div>
-  <div class="ff" style="--d:7.5s;--delay:-0.8s;--tx:19px;--ty:-22px;top:42px;left:180px;"></div>
+    <!-- Falling leaf motion paths — curved, drifting -->
+    <path id="lp1" d="M0,0 C-12,60 8,120 -5,200 C-18,280 10,340 -8,400"/>
+    <path id="lp2" d="M0,0 C15,55 -8,110 12,185 C32,260 -5,330 15,400"/>
+    <path id="lp3" d="M0,0 C-20,50 5,100 -15,170 C-35,240 8,310 -10,400"/>
+    <path id="lp4" d="M0,0 C10,65 -12,130 8,200 C28,270 -8,340 12,400"/>
+    <path id="lp5" d="M0,0 C-8,45 14,90 -6,155 C-26,220 12,300 -4,400"/>
+    <path id="lp6" d="M0,0 C18,58 -10,116 14,190 C38,264 -6,334 16,400"/>
+    <path id="lp7" d="M0,0 C-14,52 6,104 -10,176 C-26,248 10,320 -6,400"/>
+    <path id="lp8" d="M0,0 C12,48 -8,96 10,168 C30,240 -12,312 8,400"/>
+    <path id="lp9" d="M0,0 C-6,62 16,124 -4,196 C-24,268 14,336 -2,400"/>
+    <path id="lp10" d="M0,0 C20,54 -16,108 18,182 C52,256 -10,328 20,400"/>
+    <path id="lp11" d="M0,0 C-18,56 8,112 -14,184 C-36,256 8,328 -14,400"/>
+    <path id="lp12" d="M0,0 C14,60 -6,120 16,192 C38,264 -4,336 18,400"/>
 
-  <!-- ══ LEFT: ASCII TREE ══ -->
-  <div class="left">
-    <div class="mist"></div>
-    <div class="mist2"></div>
-    <div class="tree-wrap">
-<pre class="t">
-<span class="tw">       ,'</span><span class="dl">*</span><span class="tw">.</span>
-<span class="tw">      /   '</span><span class="b1">.</span>
-<span class="tw">     '</span><span class="b1">     \</span><span class="tw">  ,'</span><span class="dl">*</span><span class="tw">.</span>
-<span class="b1">      \     '</span><span class="tw">\/   '</span><span class="b1">.</span>
-<span class="tw">  ,'</span><span class="dl">*</span><span class="tw">. \      '  ,'</span><span class="dl">*</span><span class="tw">.</span>
-<span class="tw"> /   '\</span><span class="b1">'</span><span class="tw">·,</span><span class="b1">    </span><span class="rv">▄▀▀▄</span>
-<span class="b1">'     \  '</span><span class="tw">·,</span><span class="rv"> ▄▀▄</span><span class="rv">▀▄</span>
-<span class="b1">       \    '</span><span class="rv">▀▄▄▀</span>
-<span class="tw">  ,'</span><span class="dl">·</span><span class="tw">.  \</span>
-<span class="tw"> /    '·,\</span><span class="b1">    ,'</span><span class="dl">·</span><span class="tw">.</span>
-<span class="b1">'      \</span><span class="tw"> '·, /</span><span class="b1">    '</span><span class="tw">·.</span>
-<span class="b1">        \   X      '</span><span class="tw">·,</span>
-<span class="tw"> ,'</span><span class="dl">·</span><span class="tw">.   \/</span><span class="b1">  \</span>
-<span class="tw">/    '·,</span><span class="b1"> \  '</span><span class="tw">·,    ,'</span><span class="dl">·</span><span class="tw">.</span>
-<span class="b1">         \   \</span><span class="tw"> '·, /</span><span class="b1">    '</span><span class="tw">·.</span>
-<span class="b1">          \   \   X       '·,</span>
-<span class="b1">           \   \ / \</span>
-<span class="b1">            \   </span><span class="to">|</span><span class="b1">   \</span><span class="tw">    ,'</span><span class="dl">·</span><span class="tw">.</span>
-<span class="b1">             \  </span><span class="to">|</span><span class="b1">    \</span><span class="tw"> /    '</span><span class="b1">·.</span>
-<span class="tw">  ,'</span><span class="dl">·</span><span class="tw">.       </span><span class="to">|</span><span class="tw">      X        '</span><span class="b2">·,</span>
-<span class="tw"> /    '·,    </span><span class="to">|</span><span class="b1">     / \</span>
-<span class="b1">'</span><span class="tw">·,</span><span class="b2">      '·,  </span><span class="to">|</span><span class="b1">    /   \</span>
-<span class="b2">    '·,</span><span class="tw">    '·,</span><span class="to">|</span><span class="tw">  ,'</span><span class="b1">     \</span>
-<span class="b2">        '·,</span><span class="tw">   </span><span class="to">║</span>
-<span class="b1">   ,'</span><span class="dl">·</span><span class="b1">.     </span><span class="b2">'·,</span><span class="to">║</span>
-<span class="b1">  /   '·,     </span><span class="to">║</span>
-<span class="b1"> '     </span><span class="b2">'·,    </span><span class="to">║</span><span class="b1">    ,'</span><span class="dl">·</span><span class="b1">.</span>
-<span class="b2">         '·,  </span><span class="to">║</span><span class="b1">   /   '</span><span class="tw">·.</span>
-<span class="b2">            '·</span><span class="to">║</span><span class="b1">  '       '</span><span class="tw">·,</span>
-<span class="b2">              </span><span class="to">║</span>
-<span class="b1">  ,'</span><span class="dl">·</span><span class="b1">.        </span><span class="to">║</span>
-<span class="b1"> /    '·,     </span><span class="to">║</span><span class="b1">     ,'</span><span class="dl">·</span><span class="b1">.</span>
-<span class="b1">'      </span><span class="b2">'·,   </span><span class="to">║</span><span class="b1">    /   '</span><span class="tw">·.</span>
-<span class="b2">          '·, </span><span class="to">║</span><span class="b1">  /       '</span><span class="tw">·,</span>
-<span class="b2">             '</span><span class="to">╠</span><span class="b1">'</span>
-<span class="b2">              </span><span class="tk">║</span>
-<span class="b2">              </span><span class="tk">║</span>
-<span class="gr">    ,═</span><span class="tk">╦══╦</span><span class="gr">═,</span>
-<span class="gr">   / ═</span><span class="tk">╝  ╚</span><span class="gr">═ \</span>
-<span class="gr">  /═'      '═\</span>
-<span class="ms">·~</span><span class="ey">◉</span><span class="ms">~·~·~·~·~·~</span><span class="e2">·</span><span class="ms">~·</span>
-<span class="ms">·~·~·~·~·~·~·~·~·~</span>
-</pre>
-    </div>
-  </div>
+    <!-- CSS animations for sway, eye, mist, moon -->
+    <style>
+      .tr { animation: sway 9s ease-in-out infinite; transform-origin: 168px 380px; }
+      @keyframes sway {
+        0%,100% { transform: rotate(-1.2deg); }
+        50%      { transform: rotate(0.8deg); }
+      }
+      .ey { animation: epulse 3s ease-in-out infinite; }
+      @keyframes epulse { 0%,100%{opacity:.1} 50%{opacity:.95} }
+      .ey2 { animation: epulse 3s ease-in-out infinite 1.5s; }
+      .ml { animation: mdrift 14s ease-in-out infinite; }
+      .ml2 { animation: mdrift 19s ease-in-out infinite 6s; }
+      @keyframes mdrift { 0%,100%{transform:translateX(0)} 50%{transform:translateX(22px)} }
+      .mn { animation: mpulse 7s ease-in-out infinite; }
+      @keyframes mpulse { 0%,100%{opacity:.8} 50%{opacity:1} }
+      /* text in SVG */
+      .lbl { font-family: Georgia, serif; }
+      .lbl-sm { font-family: Georgia, serif; }
+    </style>
+  </defs>
 
-  <!-- divider -->
-  <div class="div"></div>
+  <!-- ═══ BACKGROUND ═══ -->
+  <rect width="820" height="400" fill="url(#bg)"/>
 
-  <!-- ══ RIGHT: Content ══ -->
-  <div class="right">
-    <div class="sl">Intelligence Systems Lab</div>
+  <!-- Moon -->
+  <circle class="mn" cx="272" cy="36" r="36" fill="url(#moonglow)"/>
+  <circle class="mn" cx="272" cy="36" r="22" fill="#fff8e0" fill-opacity="0.06"/>
 
-    <div class="intro">
-      I design automation systems, intelligence workflows, and analytical tools
-      that help analysts work more effectively in complex global environments.<br/><br/>
-      <em>Previously: Corporate Protective Intelligence Analyst — monitoring
-      geopolitical risk across global regions as a security contractor.</em>
-    </div>
+  <!-- ═══ FALLING LEAVES (SMIL animateMotion — confirmed GitHub-compatible) ═══ -->
+  <!-- Each leaf travels a curved path from a branch tip downward -->
 
-    <div class="dl2">Core Domains</div>
+  <!-- Leaf 1 -->
+  <use xlink:href="#leaf-a" transform="scale(1.1)">
+    <animateMotion dur="7s" repeatCount="indefinite" begin="0s">
+      <mpath xlink:href="#lp1"/>
+    </animateMotion>
+    <animateTransform attributeName="transform" type="rotate"
+      values="0;30;-15;40;-10;25;0" dur="7s" repeatCount="indefinite" additive="sum"/>
+    <animate attributeName="opacity" values="0;0.9;0.8;0.7;0.5;0" dur="7s" repeatCount="indefinite"/>
+  </use>
+  <!-- offset start position -->
+  <g transform="translate(88,0)">
+    <use xlink:href="#leaf-b" transform="scale(0.9)">
+      <animateMotion dur="8.5s" repeatCount="indefinite" begin="-2s">
+        <mpath xlink:href="#lp2"/>
+      </animateMotion>
+      <animateTransform attributeName="transform" type="rotate"
+        values="10;-20;35;-10;30;-5;10" dur="8.5s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0;0.85;0.75;0.65;0.4;0" dur="8.5s" repeatCount="indefinite"/>
+    </use>
+  </g>
+  <g transform="translate(130,20)">
+    <use xlink:href="#leaf-c" transform="scale(1.2)">
+      <animateMotion dur="6.8s" repeatCount="indefinite" begin="-4s">
+        <mpath xlink:href="#lp3"/>
+      </animateMotion>
+      <animateTransform attributeName="transform" type="rotate"
+        values="-5;25;-30;15;-20;10;-5" dur="6.8s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0;0.9;0.8;0.7;0.45;0" dur="6.8s" repeatCount="indefinite"/>
+    </use>
+  </g>
+  <g transform="translate(50,10)">
+    <use xlink:href="#leaf-a" transform="scale(0.85)">
+      <animateMotion dur="9.2s" repeatCount="indefinite" begin="-1.5s">
+        <mpath xlink:href="#lp4"/>
+      </animateMotion>
+      <animateTransform attributeName="transform" type="rotate"
+        values="20;-15;30;-25;20;-8;20" dur="9.2s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0;0.8;0.7;0.6;0.35;0" dur="9.2s" repeatCount="indefinite"/>
+    </use>
+  </g>
+  <g transform="translate(170,5)">
+    <use xlink:href="#leaf-b" transform="scale(1.0)">
+      <animateMotion dur="7.4s" repeatCount="indefinite" begin="-3.5s">
+        <mpath xlink:href="#lp5"/>
+      </animateMotion>
+      <animateTransform attributeName="transform" type="rotate"
+        values="-10;30;-20;25;-15;20;-10" dur="7.4s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0;0.88;0.78;0.58;0.3;0" dur="7.4s" repeatCount="indefinite"/>
+    </use>
+  </g>
+  <g transform="translate(30,15)">
+    <use xlink:href="#leaf-c" transform="scale(0.95)">
+      <animateMotion dur="10s" repeatCount="indefinite" begin="-6s">
+        <mpath xlink:href="#lp6"/>
+      </animateMotion>
+      <animateTransform attributeName="transform" type="rotate"
+        values="15;-25;20;-30;18;-12;15" dur="10s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0;0.82;0.72;0.55;0.28;0" dur="10s" repeatCount="indefinite"/>
+    </use>
+  </g>
+  <g transform="translate(110,0)">
+    <use xlink:href="#leaf-a" transform="scale(1.15)">
+      <animateMotion dur="8s" repeatCount="indefinite" begin="-0.8s">
+        <mpath xlink:href="#lp7"/>
+      </animateMotion>
+      <animateTransform attributeName="transform" type="rotate"
+        values="-20;15;-25;20;-15;10;-20" dur="8s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0;0.87;0.77;0.62;0.32;0" dur="8s" repeatCount="indefinite"/>
+    </use>
+  </g>
+  <g transform="translate(200,8)">
+    <use xlink:href="#leaf-b" transform="scale(0.8)">
+      <animateMotion dur="7.8s" repeatCount="indefinite" begin="-5s">
+        <mpath xlink:href="#lp8"/>
+      </animateMotion>
+      <animateTransform attributeName="transform" type="rotate"
+        values="25;-15;30;-20;25;-10;25" dur="7.8s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0;0.84;0.74;0.54;0.26;0" dur="7.8s" repeatCount="indefinite"/>
+    </use>
+  </g>
+  <g transform="translate(65,12)">
+    <use xlink:href="#leaf-c" transform="scale(1.05)">
+      <animateMotion dur="9.5s" repeatCount="indefinite" begin="-2.8s">
+        <mpath xlink:href="#lp9"/>
+      </animateMotion>
+      <animateTransform attributeName="transform" type="rotate"
+        values="-8;22;-28;16;-22;12;-8" dur="9.5s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0;0.86;0.76;0.56;0.3;0" dur="9.5s" repeatCount="indefinite"/>
+    </use>
+  </g>
+  <g transform="translate(145,0)">
+    <use xlink:href="#leaf-a" transform="scale(0.92)">
+      <animateMotion dur="6.5s" repeatCount="indefinite" begin="-7s">
+        <mpath xlink:href="#lp10"/>
+      </animateMotion>
+      <animateTransform attributeName="transform" type="rotate"
+        values="5;-30;20;-25;15;-5;5" dur="6.5s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0;0.9;0.8;0.65;0.38;0" dur="6.5s" repeatCount="indefinite"/>
+    </use>
+  </g>
+  <g transform="translate(20,6)">
+    <use xlink:href="#leaf-b" transform="scale(1.08)">
+      <animateMotion dur="11s" repeatCount="indefinite" begin="-4.2s">
+        <mpath xlink:href="#lp11"/>
+      </animateMotion>
+      <animateTransform attributeName="transform" type="rotate"
+        values="12;-22;28;-18;24;-14;12" dur="11s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0;0.83;0.73;0.53;0.25;0" dur="11s" repeatCount="indefinite"/>
+    </use>
+  </g>
+  <g transform="translate(185,3)">
+    <use xlink:href="#leaf-c" transform="scale(0.88)">
+      <animateMotion dur="8.2s" repeatCount="indefinite" begin="-9s">
+        <mpath xlink:href="#lp12"/>
+      </animateMotion>
+      <animateTransform attributeName="transform" type="rotate"
+        values="-15;20;-28;14;-20;8;-15" dur="8.2s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0;0.88;0.78;0.6;0.32;0" dur="8.2s" repeatCount="indefinite"/>
+    </use>
+  </g>
 
-    <div class="domains">
-      <div class="dr"><div class="dk2">Geopolitical Intel</div><div class="dv2">Global political risk monitoring</div></div>
-      <div class="dr"><div class="dk2">OSINT Engineering</div><div class="dv2">Data pipelines + ingestion systems</div></div>
-      <div class="dr"><div class="dk2">Automation</div><div class="dv2">Reduce analyst workload</div></div>
-      <div class="dr"><div class="dk2">AI Systems</div><div class="dv2">Local AI for research workflows</div></div>
-      <div class="dr"><div class="dk2">Behavioral Analysis</div><div class="dv2">Psychological pattern analysis</div></div>
-    </div>
+  <!-- ═══ GNARLED HORROR TREE (SVG paths, swaying group) ═══ -->
+  <g class="tr">
 
-    <div class="sig">— Aureum01</div>
-  </div>
+    <!-- TRUNK — thick, textured, slightly left-leaning -->
+    <path d="M168,390 C164,350 158,310 162,270 C166,232 156,196 150,162 C144,130 148,104 142,82"
+          stroke="#1c1208" stroke-width="22" fill="none" stroke-linecap="round"/>
+    <path d="M168,390 C165,348 160,308 164,268 C168,230 158,194 152,160 C146,128 150,102 144,80"
+          stroke="#2d1a08" stroke-width="14" fill="none" stroke-linecap="round"/>
+    <!-- inner highlight -->
+    <path d="M167,380 C164,340 159,300 163,262 C167,226 158,192 153,158"
+          stroke="#3d2410" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.5"/>
+    <!-- bark cracks -->
+    <path d="M162,340 C159,334 157,326 160,318" stroke="#3d2200" stroke-width="1.5" fill="none" opacity="0.55"/>
+    <path d="M160,296 C157,290 155,282 158,274" stroke="#3d2200" stroke-width="1.5" fill="none" opacity="0.5"/>
+    <path d="M158,252 C155,246 153,238 156,230" stroke="#3d2200" stroke-width="1.5" fill="none" opacity="0.45"/>
+    <path d="M155,210 C152,204 150,196 153,188" stroke="#3d2200" stroke-width="1.3" fill="none" opacity="0.4"/>
 
-</div>
-</div>
-</foreignObject>
+    <!-- ROOT CLAWS -->
+    <path d="M162,386 C148,390 130,394 110,398" stroke="#1a1006" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <path d="M165,388 C170,392 178,396 192,400" stroke="#1a1006" stroke-width="8"  fill="none" stroke-linecap="round"/>
+    <path d="M160,390 C144,396 124,400 100,400" stroke="#221408" stroke-width="5"  fill="none" stroke-linecap="round"/>
+    <path d="M166,392 C178,398 194,400 212,400" stroke="#221408" stroke-width="4"  fill="none" stroke-linecap="round"/>
+    <path d="M158,392 C138,400 116,400 90,400"  stroke="#1a1006" stroke-width="3"  fill="none" stroke-linecap="round"/>
+
+    <!-- BRANCH A — major high left arm, drooping -->
+    <path d="M146,90 C130,76 108,62 82,48 C58,36 36,26 12,16"
+          stroke="#1e1208" stroke-width="13" fill="none" stroke-linecap="round"/>
+    <path d="M146,90 C128,78 106,64 80,50 C56,38 34,28 10,18"
+          stroke="#2e1a08" stroke-width="7"  fill="none" stroke-linecap="round"/>
+    <!-- Branch A sub-twigs -->
+    <path d="M82,48 C74,38 64,28 52,16"   stroke="#241408" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M82,48 C78,38 72,28 70,14"   stroke="#241408" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M110,62 C108,50 102,40 98,26" stroke="#241408" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M110,62 C116,50 120,40 126,26" stroke="#241408" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M36,26 C28,16 20,8 10,2"      stroke="#2e1a08" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M36,26 C40,14 44,6 42,0"      stroke="#2e1a08" stroke-width="2"   fill="none" stroke-linecap="round"/>
+    <!-- fine twigs -->
+    <path d="M52,16 C48,8 44,2 42,0"       stroke="#241408" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M70,14 C68,6 66,0 64,0"       stroke="#241408" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M98,26 C94,16 90,8 88,2"      stroke="#241408" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M126,26 C130,16 132,6 130,0"  stroke="#241408" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+    <!-- BRANCH B — mid-high left, drooping further -->
+    <path d="M152,128 C132,118 110,112 88,114 C66,116 46,122 24,134"
+          stroke="#1e1208" stroke-width="11" fill="none" stroke-linecap="round"/>
+    <path d="M88,114 C78,102 70,90 64,76"   stroke="#241408" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M62,122 C54,110 48,98 44,84"   stroke="#241408" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M24,134 C16,122 10,110 8,96"   stroke="#241408" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M24,134 C20,146 18,158 22,170" stroke="#241408" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <!-- extra sub twigs on B -->
+    <path d="M64,76 C60,66 58,54 56,42"     stroke="#1e1208" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M44,84 C40,72 38,60 36,46"     stroke="#1e1208" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M8,96 C4,82 2,68 0,52"         stroke="#241408" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+    <!-- BRANCH C — upper right, shorter, angled upward -->
+    <path d="M148,110 C162,94 180,80 200,68 C218,58 236,50 258,40"
+          stroke="#1e1208" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M200,68 C202,56 204,42 208,28"  stroke="#241408" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <path d="M230,52 C236,40 242,28 248,14"  stroke="#241408" stroke-width="3"   fill="none" stroke-linecap="round"/>
+    <path d="M258,40 C262,28 260,14 264,4"   stroke="#241408" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <!-- fine twigs C -->
+    <path d="M208,28 C206,18 204,10 202,2"   stroke="#1e1208" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M248,14 C252,6 254,0 252,0"     stroke="#1e1208" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+    <!-- BRANCH D — mid-right, drooping -->
+    <path d="M155,162 C174,152 196,146 216,148 C236,150 254,158 272,170"
+          stroke="#1e1208" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M224,148 C230,136 238,124 248,112" stroke="#241408" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M272,170 C280,160 290,150 298,138" stroke="#241408" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M260,158 C268,148 276,136 282,122" stroke="#241408" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- BRANCH E — lower right, drooping heavily -->
+    <path d="M158,210 C180,202 204,198 226,202 C246,206 264,216 282,232"
+          stroke="#1e1208" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M246,202 C252,192 260,180 270,168" stroke="#241408" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M282,232 C292,222 304,212 312,198" stroke="#241408" stroke-width="2"   fill="none" stroke-linecap="round"/>
+
+    <!-- THORN / dead-leaf diamond marks at twig tips -->
+    <polygon points="10,18  13,14  16,18  13,22"  fill="#2e1a08" opacity="0.75"/>
+    <polygon points="42,0   45,-4  48,0   45,4"   fill="#2e1a08" opacity="0.75"/>
+    <polygon points="64,0   67,-4  70,0   67,4"   fill="#2e1a08" opacity="0.7"/>
+    <polygon points="88,2   91,-2  94,2   91,6"   fill="#2e1a08" opacity="0.7"/>
+    <polygon points="128,0  131,-4 134,0  131,4"  fill="#2e1a08" opacity="0.65"/>
+    <polygon points="206,2  209,-2 212,2  209,6"  fill="#241408" opacity="0.65"/>
+    <polygon points="250,0  253,-4 256,0  253,4"  fill="#241408" opacity="0.6"/>
+    <polygon points="264,4  267,0  270,4  267,8"  fill="#241408" opacity="0.6"/>
+    <polygon points="0,52   3,48   6,52   3,56"   fill="#241408" opacity="0.55"/>
+
+    <!-- RAVEN on high left branch -->
+    <g transform="translate(78,40) rotate(-6)">
+      <!-- body -->
+      <ellipse cx="0" cy="0" rx="11" ry="7" fill="#0d0a07"/>
+      <!-- head -->
+      <ellipse cx="11" cy="-4" rx="7" ry="5" fill="#0d0a07"/>
+      <!-- beak -->
+      <path d="M17,-5 L24,-8 L19,-2" fill="#0d0a07"/>
+      <!-- eye blink -->
+      <circle cx="14" cy="-5" r="1.5" fill="#1e1208">
+        <animate attributeName="r" values="1.5;1.5;0.2;1.5;1.5" dur="4s" repeatCount="indefinite" begin="-1s"/>
+      </circle>
+      <!-- wings -->
+      <path d="M-8,0 C-18,8 -22,18 -20,26"  stroke="#0d0a07" stroke-width="3.5" fill="none"/>
+      <path d="M4,-2 C14,6 18,16 16,24"     stroke="#0d0a07" stroke-width="3.5" fill="none"/>
+      <!-- tail -->
+      <path d="M-8,4 C-12,12 -10,20 -12,26" stroke="#0d0a07" stroke-width="2.5" fill="none"/>
+    </g>
+
+  </g><!-- end .tr sway group -->
+
+  <!-- MIST at base — two drifting ellipses -->
+  <ellipse class="ml"  cx="168" cy="395" rx="160" ry="18" fill="url(#mistglow)"/>
+  <ellipse class="ml2" cx="168" cy="398" rx="200" ry="12" fill="url(#mistglow)" opacity="0.6"/>
+
+  <!-- WATCHING EYE from mist -->
+  <ellipse class="ey" cx="168" cy="388" rx="28" ry="12" fill="url(#eyeglow)"/>
+  <circle  class="ey2" cx="165" cy="386" r="3.5" fill="#C8A060"/>
+
+  <!-- ═══ VERTICAL DIVIDER ═══ -->
+  <line x1="330" y1="24" x2="330" y2="376"
+        stroke="#2d1a00" stroke-width="0.8" stroke-dasharray="2,5" opacity="0.55"/>
+
+  <!-- ═══ RIGHT PANEL — all SVG text ═══ -->
+
+  <!-- Section label -->
+  <text x="348" y="44" class="lbl" font-size="8" letter-spacing="4"
+        fill="#5c2a00" opacity="0.8">INTELLIGENCE SYSTEMS LAB</text>
+  <line x1="348" y1="50" x2="800" y2="50" stroke="#2d1a00" stroke-width="0.5" opacity="0.4"/>
+
+  <!-- Intro copy -->
+  <text x="348" y="74"  class="lbl" font-size="12" fill="#8B7040">I design automation systems, intelligence workflows,</text>
+  <text x="348" y="91"  class="lbl" font-size="12" fill="#8B7040">and analytical tools that help analysts work more</text>
+  <text x="348" y="108" class="lbl" font-size="12" fill="#8B7040">effectively in complex global environments.</text>
+
+  <text x="348" y="132" class="lbl" font-size="11.5" fill="#6B5030" font-style="italic">Previously: Corporate Protective Intelligence Analyst,</text>
+  <text x="348" y="148" class="lbl" font-size="11.5" fill="#6B5030" font-style="italic">monitoring geopolitical risk across global regions.</text>
+
+  <!-- Divider rule -->
+  <line x1="348" y1="164" x2="800" y2="164" stroke="#2d1a00" stroke-width="0.5" stroke-dasharray="3,4" opacity="0.35"/>
+
+  <!-- Domain label -->
+  <text x="348" y="182" class="lbl" font-size="8" letter-spacing="3"
+        fill="#5c2a00" opacity="0.7">CORE DOMAINS</text>
+
+  <!-- Domain rows — alternating bg rects + text -->
+  <rect x="348" y="188" width="194" height="19" rx="2" fill="#1a1008" opacity="0.5"/>
+  <text x="356" y="201" class="lbl" font-size="11" fill="#C8A060" font-weight="bold">Geopolitical Intel</text>
+  <rect x="546" y="188" width="254" height="19" rx="2" fill="#120c05" opacity="0.5"/>
+  <text x="554" y="201" class="lbl" font-size="11" fill="#7a6030">Global political risk monitoring</text>
+
+  <rect x="348" y="211" width="194" height="19" rx="2" fill="#120c05" opacity="0.5"/>
+  <text x="356" y="224" class="lbl" font-size="11" fill="#C8A060" font-weight="bold">OSINT Engineering</text>
+  <rect x="546" y="211" width="254" height="19" rx="2" fill="#1a1008" opacity="0.5"/>
+  <text x="554" y="224" class="lbl" font-size="11" fill="#7a6030">Data pipelines + ingestion systems</text>
+
+  <rect x="348" y="234" width="194" height="19" rx="2" fill="#1a1008" opacity="0.5"/>
+  <text x="356" y="247" class="lbl" font-size="11" fill="#C8A060" font-weight="bold">Automation</text>
+  <rect x="546" y="234" width="254" height="19" rx="2" fill="#120c05" opacity="0.5"/>
+  <text x="554" y="247" class="lbl" font-size="11" fill="#7a6030">Reduce analyst workload</text>
+
+  <rect x="348" y="257" width="194" height="19" rx="2" fill="#120c05" opacity="0.5"/>
+  <text x="356" y="270" class="lbl" font-size="11" fill="#C8A060" font-weight="bold">AI Systems</text>
+  <rect x="546" y="257" width="254" height="19" rx="2" fill="#1a1008" opacity="0.5"/>
+  <text x="554" y="270" class="lbl" font-size="11" fill="#7a6030">Local AI for research workflows</text>
+
+  <rect x="348" y="280" width="194" height="19" rx="2" fill="#1a1008" opacity="0.5"/>
+  <text x="356" y="293" class="lbl" font-size="11" fill="#C8A060" font-weight="bold">Behavioral Analysis</text>
+  <rect x="546" y="280" width="254" height="19" rx="2" fill="#120c05" opacity="0.5"/>
+  <text x="554" y="293" class="lbl" font-size="11" fill="#7a6030">Psychological pattern analysis</text>
+
+  <!-- Closing ornament -->
+  <line x1="348" y1="312" x2="800" y2="312" stroke="#2d1a00" stroke-width="0.4" opacity="0.3"/>
+  <text x="798" y="390" class="lbl" font-size="9" fill="#3d2200" opacity="0.3"
+        text-anchor="end" font-style="italic">— Aureum01</text>
+
+  <!-- Poe quote — breathing opacity via SMIL -->
+  <text x="348" y="340" class="lbl" font-size="11" fill="#7a5c30" font-style="italic">
+    "The boundaries which divide Life from Death
+    <animate attributeName="opacity" values="0.28;0.82;0.28" dur="9s" repeatCount="indefinite"/>
+  </text>
+  <text x="348" y="357" class="lbl" font-size="11" fill="#7a5c30" font-style="italic">
+    are at best shadowy and vague."
+    <animate attributeName="opacity" values="0.28;0.82;0.28" dur="9s" repeatCount="indefinite"/>
+  </text>
+  <text x="348" y="373" class="lbl" font-size="9" fill="#4a2e10" letter-spacing="2">
+    — EDGAR ALLAN POE
+    <animate attributeName="opacity" values="0.2;0.65;0.2" dur="9s" repeatCount="indefinite"/>
+  </text>
+
 </svg>
