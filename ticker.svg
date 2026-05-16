@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 860 64" width="860" height="64">
+<foreignObject width="100%" height="100%">
+<div xmlns="http://www.w3.org/1999/xhtml">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=JetBrains+Mono:wght@500;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+.bar{
+  width:860px;height:64px;
+  background:#0f0e0a;
+  border:1px solid #3D3519;border-radius:6px;
+  display:flex;align-items:center;
+  font-family:'JetBrains Mono',monospace;
+  overflow:hidden;position:relative;
+}
+.bar::before{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(236,185,19,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(236,185,19,.02) 1px,transparent 1px);
+  background-size:44px 44px;pointer-events:none;
+}
+.ticker{
+  display:flex;align-items:center;gap:0;
+  animation:scroll 28s linear infinite;
+  white-space:nowrap;position:relative;z-index:1;
+}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.item{
+  display:flex;align-items:center;gap:8px;
+  padding:0 22px;border-right:1px solid #3D3519;
+  height:64px;flex-shrink:0;
+}
+.item-lbl{
+  font-size:.52rem;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:#6B5F3A;
+}
+.item-val{
+  font-size:.8rem;font-weight:700;color:#ECB913;letter-spacing:.04em;
+}
+.item-val.b{color:#60A5FA;}
+.item-val.g{color:#A78BFA;}
+.item-val.r{color:#34D399;}
+.item-val.red{color:#EF4444;}
+.dot{width:5px;height:5px;border-radius:50%;background:#ECB913;}
+.dot.b{background:#60A5FA;}
+.dot.g{background:#A78BFA;}
+.dot.r{background:#34D399;}
+.dot.live{background:#EF4444;animation:lp 1.2s ease-in-out infinite;}
+@keyframes lp{0%,100%{opacity:1}50%{opacity:.2}}
+</style>
+<div class="bar">
+  <div class="ticker">
+    <!-- set 1 -->
+    <div class="item"><div class="dot live"></div><div class="item-lbl">Status</div><div class="item-val red">ANALYST ACTIVE</div></div>
+    <div class="item"><div class="dot"></div><div class="item-lbl">Specialty</div><div class="item-val">Protective Intel</div></div>
+    <div class="item"><div class="dot b"></div><div class="item-lbl">Stack</div><div class="item-val b">OSINT · AI · Automation</div></div>
+    <div class="item"><div class="dot g"></div><div class="item-lbl">Region Focus</div><div class="item-val g">Global · MENA · EU</div></div>
+    <div class="item"><div class="dot r"></div><div class="item-lbl">Location</div><div class="item-val r">Hjørring · DK</div></div>
+    <div class="item"><div class="dot"></div><div class="item-lbl">Projects</div><div class="item-val">travelrisk · RTIN · misr</div></div>
+    <div class="item"><div class="dot b"></div><div class="item-lbl">Education</div><div class="item-val b">Criminology + CIS · Flagler</div></div>
+    <div class="item"><div class="dot g"></div><div class="item-lbl">Training</div><div class="item-val g">EUX Elektriker · 2027</div></div>
+    <div class="item"><div class="dot"></div><div class="item-lbl">PyPI</div><div class="item-val">ucgen · systemgen</div></div>
+    <div class="item"><div class="dot r"></div><div class="item-lbl">Pathway</div><div class="item-val r">MARTEC → Maskinmester</div></div>
+    <!-- set 2 (duplicate for seamless loop) -->
+    <div class="item"><div class="dot live"></div><div class="item-lbl">Status</div><div class="item-val red">ANALYST ACTIVE</div></div>
+    <div class="item"><div class="dot"></div><div class="item-lbl">Specialty</div><div class="item-val">Protective Intel</div></div>
+    <div class="item"><div class="dot b"></div><div class="item-lbl">Stack</div><div class="item-val b">OSINT · AI · Automation</div></div>
+    <div class="item"><div class="dot g"></div><div class="item-lbl">Region Focus</div><div class="item-val g">Global · MENA · EU</div></div>
+    <div class="item"><div class="dot r"></div><div class="item-lbl">Location</div><div class="item-val r">Hjørring · DK</div></div>
+    <div class="item"><div class="dot"></div><div class="item-lbl">Projects</div><div class="item-val">travelrisk · RTIN · misr</div></div>
+    <div class="item"><div class="dot b"></div><div class="item-lbl">Education</div><div class="item-val b">Criminology + CIS · Flagler</div></div>
+    <div class="item"><div class="dot g"></div><div class="item-lbl">Training</div><div class="item-val g">EUX Elektriker · 2027</div></div>
+    <div class="item"><div class="dot"></div><div class="item-lbl">PyPI</div><div class="item-val">ucgen · systemgen</div></div>
+    <div class="item"><div class="dot r"></div><div class="item-lbl">Pathway</div><div class="item-val r">MARTEC → Maskinmester</div></div>
+  </div>
+</div>
+</div>
+</foreignObject>
+</svg>
