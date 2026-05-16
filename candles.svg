@@ -1,0 +1,92 @@
+<svg fill="none" viewBox="0 0 820 60" width="820" height="60" xmlns="http://www.w3.org/2000/svg">
+<foreignObject width="100%" height="100%">
+<div xmlns="http://www.w3.org/1999/xhtml">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  .wrap {
+    width: 820px; height: 60px;
+    background: #0c0a08;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    gap: 0;
+  }
+  .rule {
+    height: 1px;
+    flex: 1;
+    background: linear-gradient(to right, transparent, rgba(61,34,0,0.45), rgba(61,34,0,0.45), transparent);
+  }
+  .candle-wrap { position: relative; display: flex; flex-direction: column; align-items: center; width: 50px; }
+  .candle-body { width: 12px; height: 16px; background: #1a1409; border-radius: 2px; }
+  .wick { width: 1.5px; height: 5px; background: #3d2b00; margin-bottom: 0; }
+  .flame {
+    width: 10px; height: 16px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    background: radial-gradient(ellipse at 50% 80%, #fff3a0 0%, #ff9900 40%, transparent 100%);
+    margin-bottom: 0;
+  }
+  .glow {
+    position: absolute;
+    top: 2px;
+    width: 32px; height: 26px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(255,153,0,0.35) 0%, transparent 70%);
+  }
+  .c1 .flame { animation: fa 1.5s ease-in-out infinite; transform-origin: 50% 100%; }
+  .c1 .glow  { animation: ga 1.5s ease-in-out infinite; }
+  .c2 .flame { animation: fb 1.9s ease-in-out infinite 0.4s; transform-origin: 50% 100%; }
+  .c2 .glow  { animation: ga 1.9s ease-in-out infinite 0.4s; }
+  .c3 .flame { animation: fa 1.3s ease-in-out infinite 0.8s; transform-origin: 50% 100%; }
+  .c3 .glow  { animation: ga 1.3s ease-in-out infinite 0.8s; }
+  @keyframes fa {
+    0%,100% { transform: scaleX(1) scaleY(1); }
+    33%      { transform: scaleX(1.2) scaleY(0.88); }
+    66%      { transform: scaleX(0.84) scaleY(1.12); }
+  }
+  @keyframes fb {
+    0%,100% { transform: scaleX(1) scaleY(1); }
+    33%      { transform: scaleX(0.88) scaleY(1.14); }
+    66%      { transform: scaleX(1.16) scaleY(0.86); }
+  }
+  @keyframes ga {
+    0%,100% { opacity: 0.35; }
+    50%      { opacity: 0.70; }
+  }
+  .ornament {
+    font-family: Georgia, serif;
+    font-size: 14px;
+    color: rgba(92,42,0,0.55);
+    padding: 0 8px;
+    flex-shrink: 0;
+  }
+</style>
+<div class="wrap">
+  <div class="rule"></div>
+  <div class="candle-wrap c1">
+    <div class="glow"></div>
+    <div class="flame"></div>
+    <div class="wick"></div>
+    <div class="candle-body"></div>
+  </div>
+  <div class="rule"></div>
+  <div class="ornament">✦</div>
+  <div class="rule"></div>
+  <div class="candle-wrap c2">
+    <div class="glow"></div>
+    <div class="flame"></div>
+    <div class="wick"></div>
+    <div class="candle-body"></div>
+  </div>
+  <div class="rule"></div>
+  <div class="ornament">✦</div>
+  <div class="rule"></div>
+  <div class="candle-wrap c3">
+    <div class="glow"></div>
+    <div class="flame"></div>
+    <div class="wick"></div>
+    <div class="candle-body"></div>
+  </div>
+  <div class="rule"></div>
+</div>
+</div>
+</foreignObject>
+</svg>
