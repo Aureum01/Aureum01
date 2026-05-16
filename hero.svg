@@ -1,437 +1,280 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 860 420" width="860" height="420">
-<foreignObject width="100%" height="100%">
-<div xmlns="http://www.w3.org/1999/xhtml">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
-*{margin:0;padding:0;box-sizing:border-box;}
-:root{
-  --bg:#181510;--deep:#0f0e0a;--footer:#221E10;
-  --border:#3D3519;--gold:#ECB913;--gold-dim:rgba(236,185,19,.5);
-  --gold-faint:rgba(236,185,19,.025);
-  --text:#E8E0CC;--text2:#A89D72;--text3:#6B5F3A;
-  --eco:#ECB913;--bcast:#60A5FA;--gov:#A78BFA;--reg:#34D399;
-  --live:#EF4444;--live-bg:rgba(239,68,68,.12);--live-border:rgba(239,68,68,.3);
-  --ok:#4ADE80;--ok-bg:rgba(74,222,128,.1);
-  --r:.75rem;--r2:1rem;
-}
-.shell{
-  width:860px;height:420px;
-  background:var(--deep);
-  font-family:'Manrope',sans-serif;
-  color:var(--text);
-  position:relative;overflow:hidden;
-  border-radius:6px;
-  border:1px solid var(--border);
-}
-/* grid overlay */
-.shell::before{
-  content:'';position:absolute;inset:0;
-  background-image:
-    linear-gradient(var(--gold-faint) 1px,transparent 1px),
-    linear-gradient(90deg,var(--gold-faint) 1px,transparent 1px);
-  background-size:44px 44px;
-  pointer-events:none;z-index:0;
-}
-/* scan line */
-.shell::after{
-  content:'';position:absolute;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,transparent,rgba(236,185,19,.08),transparent);
-  animation:scan 8s linear infinite;z-index:1;pointer-events:none;
-}
-@keyframes scan{0%{top:-2px}100%{top:100%}}
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 420" width="860" height="420" role="img" aria-label="Roshane Rodney intelligence systems developer banner">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0c0a09"/>
+      <stop offset="45%" stop-color="#181510"/>
+      <stop offset="100%" stop-color="#2e1065"/>
+    </linearGradient>
 
-/* header bar */
-.hdr{
-  position:relative;z-index:2;
-  height:44px;background:var(--bg);
-  border-bottom:1px solid var(--border);
-  display:flex;align-items:center;padding:0 16px;gap:12px;
-}
-.hdr-logo{
-  font-family:'JetBrains Mono',monospace;font-size:.65rem;font-weight:700;
-  letter-spacing:.2em;color:var(--gold);text-transform:uppercase;
-  display:flex;align-items:center;gap:8px;
-}
-.hdr-logo::before{
-  content:'';display:block;width:6px;height:6px;border-radius:50%;
-  background:var(--gold);
-  animation:blink 2.4s ease-in-out infinite;
-}
-@keyframes blink{0%,100%{opacity:1;box-shadow:0 0 0 0 var(--gold)}50%{opacity:.4;box-shadow:0 0 8px 2px var(--gold)}}
-.hdr-sep{width:1px;height:18px;background:var(--border);}
-.hdr-tag{
-  font-size:.55rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--text3);padding:2px 6px;border:1px solid var(--border);
-  border-radius:3px;font-family:'JetBrains Mono',monospace;
-}
-.hdr-live{
-  margin-left:auto;
-  font-size:.55rem;font-weight:700;letter-spacing:.14em;
-  text-transform:uppercase;
-  background:var(--live-bg);border:1px solid var(--live-border);
-  color:var(--live);border-radius:3px;padding:2px 7px;
-  font-family:'JetBrains Mono',monospace;
-  display:flex;align-items:center;gap:5px;
-}
-.hdr-live::before{
-  content:'';width:5px;height:5px;border-radius:50%;background:var(--live);
-  animation:livepulse 1.2s ease-in-out infinite;
-}
-@keyframes livepulse{0%,100%{opacity:1}50%{opacity:.3}}
-.hdr-ts{
-  font-family:'JetBrains Mono',monospace;font-size:.58rem;
-  color:rgba(236,185,19,.4);letter-spacing:.04em;
-}
+    <radialGradient id="glow" cx="70%" cy="25%" r="60%">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.22"/>
+      <stop offset="45%" stop-color="#ecb913" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
 
-/* main layout */
-.main{
-  position:relative;z-index:2;
-  display:flex;height:calc(420px - 44px - 38px);
-}
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
 
-/* left col: signal cards */
-.left{
-  width:200px;flex-shrink:0;
-  border-right:1px solid var(--border);
-  padding:10px 0;display:flex;flex-direction:column;gap:2px;
-  background:rgba(24,21,16,.6);backdrop-filter:blur(8px);
-}
-.col-lbl{
-  font-size:.55rem;font-weight:800;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--gold-dim);
-  padding:0 12px 6px;border-bottom:1px solid var(--border);
-  margin-bottom:4px;font-family:'JetBrains Mono',monospace;
-}
-.sig-card{
-  padding:6px 12px;cursor:default;
-  display:flex;flex-direction:column;gap:2px;
-  border-left:2px solid transparent;
-  transition:background .2s;
-}
-.sig-card.active{
-  background:rgba(236,185,19,.06);
-  border-left-color:var(--gold);
-}
-.sig-card.eco .dot{background:var(--eco);}
-.sig-card.bcast .dot{background:var(--bcast);}
-.sig-card.gov .dot{background:var(--gov);}
-.sig-card.reg .dot{background:var(--reg);}
-.sig-row{display:flex;align-items:center;gap:6px;}
-.dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;}
-.sig-name{font-size:.7rem;font-weight:700;color:var(--text);}
-.sig-sub{font-size:.6rem;color:var(--text3);font-family:'JetBrains Mono',monospace;padding-left:11px;}
-.sig-stat{
-  margin-left:auto;font-size:.55rem;font-weight:700;
-  font-family:'JetBrains Mono',monospace;
-}
-.sig-card.eco .sig-stat{color:var(--eco);}
-.sig-card.bcast .sig-stat{color:var(--bcast);}
-.sig-card.gov .sig-stat{color:var(--gov);}
-.sig-card.reg .sig-stat{color:var(--reg);}
+    <style>
+      .mono {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      }
 
-/* center: main stage */
-.center{
-  flex:1;padding:14px 16px;display:flex;flex-direction:column;gap:10px;
-}
-.stage-well{
-  background:var(--deep);border:1px solid var(--border);
-  border-radius:var(--r2);padding:16px;
-  box-shadow:inset 0 1px 0 rgba(236,185,19,.04);
-  flex:1;display:flex;flex-direction:column;gap:10px;
-  position:relative;overflow:hidden;
-}
-/* subtle inner glow on stage */
-.stage-well::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(236,185,19,.15),transparent);
-}
-.stage-title{
-  font-size:1.15rem;font-weight:800;color:var(--text);
-  letter-spacing:-.01em;line-height:1.2;
-}
-.stage-title span{color:var(--gold);}
-.stage-sub{
-  font-size:.72rem;color:var(--text2);line-height:1.6;font-weight:400;
-}
-.stage-sub em{color:var(--text);font-style:normal;font-weight:600;}
-.stage-quote{
-  margin-top:auto;
-  padding:10px 12px;
-  background:rgba(42,36,18,.4);border:1px solid var(--border);
-  border-radius:.75rem;
-  font-size:.7rem;color:var(--text3);
-  font-style:italic;line-height:1.6;
-  position:relative;
-  animation:quotefade 12s ease-in-out infinite;
-}
-@keyframes quotefade{0%,100%{opacity:.6}50%{opacity:1}}
-.stage-quote::before{
-  content:'"';position:absolute;top:-4px;left:10px;
-  font-size:1.4rem;color:var(--gold-dim);font-style:normal;line-height:1;
-}
-.stage-quote .attr{
-  margin-top:4px;font-style:normal;font-size:.58rem;
-  font-family:'JetBrains Mono',monospace;
-  color:var(--text3);letter-spacing:.08em;text-transform:uppercase;
-}
+      .sans {
+        font-family: Arial, Helvetica, sans-serif;
+      }
 
-/* metrics row */
-.metrics{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:8px;
-}
-.metric{
-  background:rgba(24,21,16,.7);border:1px solid var(--border);
-  border-radius:.625rem;padding:8px 10px;
-  display:flex;flex-direction:column;gap:2px;
-}
-.metric-lbl{
-  font-size:.52rem;font-weight:800;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--text3);
-  font-family:'JetBrains Mono',monospace;
-}
-.metric-val{
-  font-size:.85rem;font-weight:700;color:var(--gold);
-  font-family:'JetBrains Mono',monospace;
-}
-.metric-bar{
-  height:2px;background:var(--border);border-radius:1px;margin-top:4px;overflow:hidden;
-}
-.metric-bar-fill{
-  height:100%;border-radius:1px;background:var(--gold);
-  animation:barfill 4s ease-in-out infinite;
-}
-.metric:nth-child(2) .metric-bar-fill{animation-delay:1s;background:var(--bcast);}
-.metric:nth-child(3) .metric-bar-fill{animation-delay:2s;background:var(--reg);}
-@keyframes barfill{
-  0%{width:20%}40%{width:78%}60%{width:78%}100%{width:20%}
-}
+      .scan {
+        animation: scanMove 7s linear infinite;
+      }
 
-/* right col: domain panel */
-.right{
-  width:220px;flex-shrink:0;
-  border-left:1px solid var(--border);
-  padding:10px 0;display:flex;flex-direction:column;gap:0;
-  background:rgba(24,21,16,.6);backdrop-filter:blur(8px);
-}
-.domain-lbl{
-  font-size:.55rem;font-weight:800;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--gold-dim);
-  padding:0 12px 6px;border-bottom:1px solid var(--border);
-  margin-bottom:4px;font-family:'JetBrains Mono',monospace;
-}
-.domain-row{
-  padding:7px 12px;display:flex;flex-direction:column;gap:2px;
-  border-bottom:1px solid rgba(61,53,25,.5);
-  animation:rowin 1s ease both;
-}
-.domain-row:nth-child(2){animation-delay:.1s}
-.domain-row:nth-child(3){animation-delay:.2s}
-.domain-row:nth-child(4){animation-delay:.3s}
-.domain-row:nth-child(5){animation-delay:.4s}
-.domain-row:nth-child(6){animation-delay:.5s}
-@keyframes rowin{from{opacity:0;transform:translateX(8px)}to{opacity:1;transform:none}}
-.domain-name{font-size:.72rem;font-weight:700;color:var(--text);}
-.domain-desc{font-size:.6rem;color:var(--text3);line-height:1.4;}
-.domain-badge{
-  display:inline-block;font-size:.5rem;font-weight:800;
-  letter-spacing:.12em;text-transform:uppercase;
-  font-family:'JetBrains Mono',monospace;
-  padding:1px 5px;border-radius:2px;margin-top:2px;
-  background:rgba(236,185,19,.1);color:var(--gold);
-  border:1px solid rgba(236,185,19,.2);
-}
-.domain-badge.b{background:rgba(96,165,250,.1);color:var(--bcast);border-color:rgba(96,165,250,.2);}
-.domain-badge.g{background:rgba(167,139,250,.1);color:var(--gov);border-color:rgba(167,139,250,.2);}
-.domain-badge.r{background:rgba(52,211,153,.1);color:var(--reg);border-color:rgba(52,211,153,.2);}
+      @keyframes scanMove {
+        0% { transform: translateY(-60px); }
+        100% { transform: translateY(480px); }
+      }
 
-/* footer bar */
-.ftr{
-  position:relative;z-index:2;
-  height:38px;background:var(--footer);
-  border-top:1px solid var(--border);
-  display:flex;align-items:center;padding:0 16px;gap:12px;
-}
-.ftr-item{
-  display:flex;align-items:center;gap:5px;
-  font-family:'JetBrains Mono',monospace;font-size:.56rem;
-  color:var(--text3);letter-spacing:.04em;
-}
-.ftr-dot{width:5px;height:5px;border-radius:50%;}
-.ftr-dot.ok{background:var(--ok);}
-.ftr-dot.warn{background:var(--eco);}
-.ftr-sep{width:1px;height:14px;background:var(--border);}
-.ftr-right{margin-left:auto;display:flex;align-items:center;gap:10px;}
-.proto{
-  font-family:'JetBrains Mono',monospace;font-size:.52rem;
-  background:var(--deep);border:1px solid var(--border);
-  color:var(--text3);padding:2px 7px;border-radius:3px;
-  letter-spacing:.06em;
-}
-</style>
+      .pulse {
+        animation: pulse 2.8s ease-in-out infinite;
+        transform-origin: center;
+      }
 
-<div class="shell">
-  <!-- HEADER -->
-  <div class="hdr">
-    <div class="hdr-logo">RTIN · Aureum01</div>
-    <div class="hdr-sep"></div>
-    <div class="hdr-tag">Intel Dev</div>
-    <div class="hdr-tag">OSINT</div>
-    <div class="hdr-tag">Automation</div>
-    <div class="hdr-live">SIGNAL ACTIVE</div>
-    <div class="hdr-ts">UTC+0 · 2026</div>
-  </div>
+      .pulse2 {
+        animation: pulse 3.6s ease-in-out infinite;
+        transform-origin: center;
+        animation-delay: .5s;
+      }
 
-  <!-- MAIN -->
-  <div class="main">
+      @keyframes pulse {
+        0%, 100% { opacity: .25; transform: scale(.96); }
+        50% { opacity: .9; transform: scale(1.04); }
+      }
 
-    <!-- LEFT: signal sources -->
-    <div class="left">
-      <div class="col-lbl">Source Feeds</div>
+      .blink {
+        animation: blink 1.1s steps(2, start) infinite;
+      }
 
-      <div class="sig-card eco active">
-        <div class="sig-row">
-          <div class="dot"></div>
-          <div class="sig-name">Geopolitical</div>
-          <div class="sig-stat">↑ HIGH</div>
-        </div>
-        <div class="sig-sub">Global risk · Crisis</div>
-      </div>
+      @keyframes blink {
+        0%, 45% { opacity: 1; }
+        46%, 100% { opacity: 0; }
+      }
 
-      <div class="sig-card bcast">
-        <div class="sig-row">
-          <div class="dot"></div>
-          <div class="sig-name">OSINT Pipe</div>
-          <div class="sig-stat">LIVE</div>
-        </div>
-        <div class="sig-sub">Open-source · SIGINT</div>
-      </div>
+      .bar1 {
+        animation: barMove1 4s ease-in-out infinite;
+      }
 
-      <div class="sig-card gov">
-        <div class="sig-row">
-          <div class="dot"></div>
-          <div class="sig-name">Behavioral</div>
-          <div class="sig-stat">SCAN</div>
-        </div>
-        <div class="sig-sub">Pattern · Psych</div>
-      </div>
+      .bar2 {
+        animation: barMove2 4.5s ease-in-out infinite;
+      }
 
-      <div class="sig-card reg">
-        <div class="sig-row">
-          <div class="dot"></div>
-          <div class="sig-name">AI Systems</div>
-          <div class="sig-stat">LOCAL</div>
-        </div>
-        <div class="sig-sub">Inference · LLM</div>
-      </div>
+      .bar3 {
+        animation: barMove3 5s ease-in-out infinite;
+      }
 
-      <div class="sig-card eco">
-        <div class="sig-row">
-          <div class="dot"></div>
-          <div class="sig-name">Automation</div>
-          <div class="sig-stat">RUN</div>
-        </div>
-        <div class="sig-sub">Pipeline · VBA</div>
-      </div>
+      @keyframes barMove1 {
+        0%,100% { width: 40px; }
+        50% { width: 118px; }
+      }
 
-      <div class="sig-card bcast">
-        <div class="sig-row">
-          <div class="dot"></div>
-          <div class="sig-name">Reverse Intel</div>
-          <div class="sig-stat">WATCH</div>
-        </div>
-        <div class="sig-sub">Counter · Analysis</div>
-      </div>
-    </div>
+      @keyframes barMove2 {
+        0%,100% { width: 55px; }
+        50% { width: 132px; }
+      }
 
-    <!-- CENTER: main stage -->
-    <div class="center">
-      <div class="stage-well">
-        <div class="stage-title">Roshane Rodney<br/><span>Intelligence Systems Developer</span></div>
-        <div class="stage-sub">
-          Building <em>automation systems, intelligence workflows, and analytical tools</em>
-          that help analysts work more effectively in complex global environments.
-          Previously a <em>Corporate Protective Intelligence Analyst</em> — geopolitical
-          risk monitoring, GSOC operations, and structured crisis assessment.
-        </div>
+      @keyframes barMove3 {
+        0%,100% { width: 35px; }
+        50% { width: 105px; }
+      }
 
-        <div class="metrics">
-          <div class="metric">
-            <div class="metric-lbl">Threat Ratio</div>
-            <div class="metric-val">0.82</div>
-            <div class="metric-bar"><div class="metric-bar-fill"></div></div>
-          </div>
-          <div class="metric">
-            <div class="metric-lbl">Signal Depth</div>
-            <div class="metric-val">DEEP</div>
-            <div class="metric-bar"><div class="metric-bar-fill"></div></div>
-          </div>
-          <div class="metric">
-            <div class="metric-lbl">Coverage</div>
-            <div class="metric-val">GLOBAL</div>
-            <div class="metric-bar"><div class="metric-bar-fill"></div></div>
-          </div>
-        </div>
+      .fadeIn {
+        animation: fadeIn 1.2s ease both;
+      }
 
-        <div class="stage-quote">
-          The best intelligence does not reduce uncertainty — it maps it with precision,
-          so the analyst knows exactly where to act and where to wait.
-          <div class="attr">— Operational Doctrine</div>
-        </div>
-      </div>
-    </div>
+      .delay1 { animation-delay: .15s; }
+      .delay2 { animation-delay: .3s; }
+      .delay3 { animation-delay: .45s; }
+      .delay4 { animation-delay: .6s; }
 
-    <!-- RIGHT: domain panel -->
-    <div class="right">
-      <div class="domain-lbl">Domain Stack</div>
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateX(10px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+    </style>
+  </defs>
 
-      <div class="domain-row">
-        <div class="domain-name">Geopolitical Intel</div>
-        <div class="domain-desc">Global political risk · Crisis monitoring</div>
-        <div class="domain-badge">ECO</div>
-      </div>
-      <div class="domain-row">
-        <div class="domain-name">OSINT Engineering</div>
-        <div class="domain-desc">Data pipelines · Open-source collection</div>
-        <div class="domain-badge b">SIGNAL</div>
-      </div>
-      <div class="domain-row">
-        <div class="domain-name">Behavioral Analysis</div>
-        <div class="domain-desc">Pattern analysis · Psychological profiling</div>
-        <div class="domain-badge g">PSYCH</div>
-      </div>
-      <div class="domain-row">
-        <div class="domain-name">AI Systems</div>
-        <div class="domain-desc">Local inference · Research automation</div>
-        <div class="domain-badge r">LOCAL AI</div>
-      </div>
-      <div class="domain-row">
-        <div class="domain-name">Automation</div>
-        <div class="domain-desc">Pipeline engineering · VBA · Collection</div>
-        <div class="domain-badge">PIPE</div>
-      </div>
-      <div class="domain-row">
-        <div class="domain-name">Reverse Intel</div>
-        <div class="domain-desc">Counter-analysis · Narrative tracking</div>
-        <div class="domain-badge g">COUNTER</div>
-      </div>
-    </div>
-  </div>
+  <!-- Base -->
+  <rect x="0.5" y="0.5" width="859" height="419" rx="8" fill="url(#bg)" stroke="#3D3519"/>
+  <rect x="0" y="0" width="860" height="420" fill="url(#glow)"/>
 
-  <!-- FOOTER -->
-  <div class="ftr">
-    <div class="ftr-item"><div class="ftr-dot ok"></div>Aureum01 · GitHub</div>
-    <div class="ftr-sep"></div>
-    <div class="ftr-item"><div class="ftr-dot ok"></div>roshanerodney.com</div>
-    <div class="ftr-sep"></div>
-    <div class="ftr-item"><div class="ftr-dot warn"></div>Hjørring · DK</div>
-    <div class="ftr-right">
-      <div class="proto">Danskuddannelse 3</div>
-      <div class="proto">EUX Elektriker · 2027</div>
-      <div class="proto">MARTEC → Maskinmester</div>
-    </div>
-  </div>
-</div>
+  <!-- Grid -->
+  <g opacity="0.14" stroke="#ecb913" stroke-width="1">
+    <path d="M0 44H860M0 88H860M0 132H860M0 176H860M0 220H860M0 264H860M0 308H860M0 352H860M0 396H860"/>
+    <path d="M44 0V420M88 0V420M132 0V420M176 0V420M220 0V420M264 0V420M308 0V420M352 0V420M396 0V420M440 0V420M484 0V420M528 0V420M572 0V420M616 0V420M660 0V420M704 0V420M748 0V420M792 0V420M836 0V420"/>
+  </g>
 
-</div>
-</foreignObject>
+  <!-- Scan line -->
+  <rect class="scan" x="0" y="-40" width="860" height="70" fill="#f97316" opacity="0.08"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="860" height="44" fill="#181510"/>
+  <line x1="0" y1="44" x2="860" y2="44" stroke="#3D3519"/>
+
+  <circle class="blink" cx="20" cy="22" r="4" fill="#ECB913" filter="url(#softGlow)"/>
+  <text x="34" y="26" class="mono" font-size="11" font-weight="700" fill="#ECB913" letter-spacing="2">RTIN · AUREUM01</text>
+
+  <line x1="160" y1="13" x2="160" y2="31" stroke="#3D3519"/>
+
+  <rect x="176" y="13" width="66" height="18" rx="3" fill="none" stroke="#3D3519"/>
+  <text x="188" y="26" class="mono" font-size="9" font-weight="700" fill="#6B5F3A" letter-spacing="1">INTEL DEV</text>
+
+  <rect x="252" y="13" width="52" height="18" rx="3" fill="none" stroke="#3D3519"/>
+  <text x="266" y="26" class="mono" font-size="9" font-weight="700" fill="#6B5F3A" letter-spacing="1">OSINT</text>
+
+  <rect x="314" y="13" width="86" height="18" rx="3" fill="none" stroke="#3D3519"/>
+  <text x="326" y="26" class="mono" font-size="9" font-weight="700" fill="#6B5F3A" letter-spacing="1">AUTOMATION</text>
+
+  <rect x="682" y="12" width="112" height="20" rx="3" fill="#2a1010" stroke="#7f1d1d"/>
+  <circle class="blink" cx="696" cy="22" r="3" fill="#EF4444"/>
+  <text x="706" y="26" class="mono" font-size="9" font-weight="700" fill="#EF4444" letter-spacing="1">SIGNAL ACTIVE</text>
+
+  <text x="810" y="26" class="mono" font-size="9" fill="#6B5F3A" text-anchor="middle">2026</text>
+
+  <!-- Columns -->
+  <rect x="0" y="44" width="200" height="338" fill="#181510" opacity="0.72"/>
+  <line x1="200" y1="44" x2="200" y2="382" stroke="#3D3519"/>
+
+  <rect x="640" y="44" width="220" height="338" fill="#181510" opacity="0.72"/>
+  <line x1="640" y1="44" x2="640" y2="382" stroke="#3D3519"/>
+
+  <!-- Left source feeds -->
+  <text x="14" y="68" class="mono" font-size="9" font-weight="800" fill="#ECB913" opacity=".65" letter-spacing="2">SOURCE FEEDS</text>
+  <line x1="0" y1="78" x2="200" y2="78" stroke="#3D3519"/>
+
+  <rect x="0" y="84" width="200" height="42" fill="#ECB913" opacity=".06"/>
+  <rect x="0" y="84" width="3" height="42" fill="#ECB913"/>
+  <circle cx="16" cy="102" r="3" fill="#ECB913"/>
+  <text x="27" y="105" class="sans" font-size="12" font-weight="700" fill="#E8E0CC">Geopolitical</text>
+  <text x="156" y="105" class="mono" font-size="9" font-weight="700" fill="#ECB913">HIGH</text>
+  <text x="27" y="119" class="mono" font-size="9" fill="#6B5F3A">Global risk · Crisis</text>
+
+  <circle cx="16" cy="145" r="3" fill="#60A5FA"/>
+  <text x="27" y="148" class="sans" font-size="12" font-weight="700" fill="#E8E0CC">OSINT Pipe</text>
+  <text x="160" y="148" class="mono" font-size="9" font-weight="700" fill="#60A5FA">LIVE</text>
+  <text x="27" y="162" class="mono" font-size="9" fill="#6B5F3A">Open-source · Signal</text>
+
+  <circle cx="16" cy="188" r="3" fill="#A78BFA"/>
+  <text x="27" y="191" class="sans" font-size="12" font-weight="700" fill="#E8E0CC">Behavioral</text>
+  <text x="158" y="191" class="mono" font-size="9" font-weight="700" fill="#A78BFA">SCAN</text>
+  <text x="27" y="205" class="mono" font-size="9" fill="#6B5F3A">Pattern · Psych</text>
+
+  <circle cx="16" cy="231" r="3" fill="#34D399"/>
+  <text x="27" y="234" class="sans" font-size="12" font-weight="700" fill="#E8E0CC">AI Systems</text>
+  <text x="150" y="234" class="mono" font-size="9" font-weight="700" fill="#34D399">LOCAL</text>
+  <text x="27" y="248" class="mono" font-size="9" fill="#6B5F3A">Inference · LLM</text>
+
+  <circle cx="16" cy="274" r="3" fill="#ECB913"/>
+  <text x="27" y="277" class="sans" font-size="12" font-weight="700" fill="#E8E0CC">Automation</text>
+  <text x="166" y="277" class="mono" font-size="9" font-weight="700" fill="#ECB913">RUN</text>
+  <text x="27" y="291" class="mono" font-size="9" fill="#6B5F3A">Pipeline · VBA</text>
+
+  <circle cx="16" cy="317" r="3" fill="#60A5FA"/>
+  <text x="27" y="320" class="sans" font-size="12" font-weight="700" fill="#E8E0CC">Reverse Intel</text>
+  <text x="154" y="320" class="mono" font-size="9" font-weight="700" fill="#60A5FA">WATCH</text>
+  <text x="27" y="334" class="mono" font-size="9" fill="#6B5F3A">Counter · Analysis</text>
+
+  <!-- Center stage -->
+  <rect x="216" y="58" width="408" height="306" rx="14" fill="#0f0e0a" stroke="#3D3519"/>
+  <line x1="236" y1="58" x2="604" y2="58" stroke="#ECB913" opacity=".25"/>
+
+  <text x="238" y="99" class="sans" font-size="25" font-weight="800" fill="#E8E0CC">Roshane Rodney</text>
+  <text x="238" y="128" class="sans" font-size="22" font-weight="800" fill="#ECB913">Intelligence Systems Developer</text>
+
+  <text x="238" y="163" class="sans" font-size="13" fill="#A89D72">
+    <tspan x="238" dy="0">Building automation systems, intelligence workflows,</tspan>
+    <tspan x="238" dy="20">and analytical tools for complex global environments.</tspan>
+    <tspan x="238" dy="20">Previously a Corporate Protective Intelligence Analyst</tspan>
+    <tspan x="238" dy="20">focused on geopolitical risk, GSOC operations, and crisis</tspan>
+    <tspan x="238" dy="20">assessment.</tspan>
+  </text>
+
+  <!-- Metrics -->
+  <rect x="238" y="250" width="112" height="62" rx="9" fill="#181510" stroke="#3D3519"/>
+  <text x="250" y="270" class="mono" font-size="8" font-weight="800" fill="#6B5F3A" letter-spacing="1">THREAT RATIO</text>
+  <text x="250" y="292" class="mono" font-size="15" font-weight="700" fill="#ECB913">0.82</text>
+  <rect x="250" y="301" width="80" height="3" rx="1" fill="#3D3519"/>
+  <rect class="bar1" x="250" y="301" height="3" rx="1" fill="#ECB913"/>
+
+  <rect x="358" y="250" width="112" height="62" rx="9" fill="#181510" stroke="#3D3519"/>
+  <text x="370" y="270" class="mono" font-size="8" font-weight="800" fill="#6B5F3A" letter-spacing="1">SIGNAL DEPTH</text>
+  <text x="370" y="292" class="mono" font-size="15" font-weight="700" fill="#60A5FA">DEEP</text>
+  <rect x="370" y="301" width="80" height="3" rx="1" fill="#3D3519"/>
+  <rect class="bar2" x="370" y="301" height="3" rx="1" fill="#60A5FA"/>
+
+  <rect x="478" y="250" width="112" height="62" rx="9" fill="#181510" stroke="#3D3519"/>
+  <text x="490" y="270" class="mono" font-size="8" font-weight="800" fill="#6B5F3A" letter-spacing="1">COVERAGE</text>
+  <text x="490" y="292" class="mono" font-size="15" font-weight="700" fill="#34D399">GLOBAL</text>
+  <rect x="490" y="301" width="80" height="3" rx="1" fill="#3D3519"/>
+  <rect class="bar3" x="490" y="301" height="3" rx="1" fill="#34D399"/>
+
+  <!-- Quote -->
+  <rect x="238" y="325" width="352" height="24" rx="7" fill="#2a2412" opacity=".7" stroke="#3D3519"/>
+  <text x="252" y="341" class="mono" font-size="10" fill="#A89D72">Find the signal. Structure the evidence. Reduce the noise.</text>
+
+  <!-- Right domain stack -->
+  <text x="654" y="68" class="mono" font-size="9" font-weight="800" fill="#ECB913" opacity=".65" letter-spacing="2">DOMAIN STACK</text>
+  <line x1="640" y1="78" x2="860" y2="78" stroke="#3D3519"/>
+
+  <g class="fadeIn delay1">
+    <text x="654" y="105" class="sans" font-size="12" font-weight="700" fill="#E8E0CC">Geopolitical Intel</text>
+    <text x="654" y="121" class="sans" font-size="10" fill="#6B5F3A">Global political risk · Crisis monitoring</text>
+    <rect x="654" y="130" width="38" height="15" rx="2" fill="#2a2412" stroke="#5a4712"/>
+    <text x="663" y="141" class="mono" font-size="8" font-weight="700" fill="#ECB913">ECO</text>
+  </g>
+
+  <g class="fadeIn delay2">
+    <text x="654" y="171" class="sans" font-size="12" font-weight="700" fill="#E8E0CC">OSINT Engineering</text>
+    <text x="654" y="187" class="sans" font-size="10" fill="#6B5F3A">Data pipelines · Open-source collection</text>
+    <rect x="654" y="196" width="58" height="15" rx="2" fill="#0b1c2e" stroke="#1e3a5f"/>
+    <text x="663" y="207" class="mono" font-size="8" font-weight="700" fill="#60A5FA">SIGNAL</text>
+  </g>
+
+  <g class="fadeIn delay3">
+    <text x="654" y="237" class="sans" font-size="12" font-weight="700" fill="#E8E0CC">Behavioral Analysis</text>
+    <text x="654" y="253" class="sans" font-size="10" fill="#6B5F3A">Pattern analysis · Psychological profiling</text>
+    <rect x="654" y="262" width="50" height="15" rx="2" fill="#1c1233" stroke="#3b246b"/>
+    <text x="663" y="273" class="mono" font-size="8" font-weight="700" fill="#A78BFA">PSYCH</text>
+  </g>
+
+  <g class="fadeIn delay4">
+    <text x="654" y="303" class="sans" font-size="12" font-weight="700" fill="#E8E0CC">AI Systems</text>
+    <text x="654" y="319" class="sans" font-size="10" fill="#6B5F3A">Local inference · Research automation</text>
+    <rect x="654" y="328" width="62" height="15" rx="2" fill="#0b2a1d" stroke="#145c3d"/>
+    <text x="663" y="339" class="mono" font-size="8" font-weight="700" fill="#34D399">LOCAL AI</text>
+  </g>
+
+  <!-- Decorative signal circles -->
+  <circle class="pulse" cx="560" cy="125" r="42" fill="none" stroke="#f97316" stroke-opacity=".55"/>
+  <circle class="pulse2" cx="560" cy="125" r="62" fill="none" stroke="#ecb913" stroke-opacity=".28"/>
+
+  <!-- Footer -->
+  <rect x="0" y="382" width="860" height="38" fill="#221E10"/>
+  <line x1="0" y1="382" x2="860" y2="382" stroke="#3D3519"/>
+
+  <circle cx="18" cy="401" r="3" fill="#4ADE80"/>
+  <text x="28" y="404" class="mono" font-size="9" fill="#6B5F3A">Aureum01 · GitHub</text>
+
+  <line x1="136" y1="392" x2="136" y2="410" stroke="#3D3519"/>
+
+  <circle cx="154" cy="401" r="3" fill="#4ADE80"/>
+  <text x="164" y="404" class="mono" font-size="9" fill="#6B5F3A">roshanerodney.com</text>
+
+  <rect x="635" y="391" width="78" height="18" rx="3" fill="#0f0e0a" stroke="#3D3519"/>
+  <text x="647" y="404" class="mono" font-size="8" fill="#6B5F3A">LOCAL-FIRST</text>
+
+  <rect x="722" y="391" width="104" height="18" rx="3" fill="#0f0e0a" stroke="#3D3519"/>
+  <text x="735" y="404" class="mono" font-size="8" fill="#6B5F3A">ANALYST TOOLS</text>
 </svg>
