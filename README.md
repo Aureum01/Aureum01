@@ -1,54 +1,49 @@
 <!--
-  DEPLOY INSTRUCTIONS
-  ═══════════════════════════════════════════════════════
-  Upload ALL files to the ROOT of your Aureum01/Aureum01 repo:
-
-    Aureum01/Aureum01/
-    ├── README.md       ← this file
-    ├── hero.svg        ← animated tree + falling leaves + info panel
-    └── drips.svg       ← minimal ink-drip section divider
-
-  Do NOT put them in a subfolder. The paths below use ./file.svg
-  which resolves to the repo root when viewing the profile page.
-  ═══════════════════════════════════════════════════════
+  DEPLOY: Upload all 5 files to the ROOT of Aureum01/Aureum01:
+    README.md · hero.svg · ticker.svg · projects.svg · rule.svg
 -->
 
 <div align="center">
-
-<img src="https://readme-typing-svg.demolab.com?font=Cinzel+Decorative&weight=400&size=11&duration=4000&pause=1200&color=6B2B2B&center=true&vCenter=true&width=750&height=26&lines=%E2%80%9CDeep+into+that+darkness+peering%2C+long+I+stood+there%2C+wondering%2C+fearing%E2%80%9D" alt="Poe"/>
-
-<br/>
-
-<img src="https://readme-typing-svg.demolab.com?font=Cinzel&weight=700&size=40&duration=0&pause=0&color=C8A060&center=true&vCenter=true&repeat=false&width=750&height=80&lines=Roshane+Rodney" alt="Roshane Rodney"/>
-
-<br/>
-
-<img src="https://readme-typing-svg.demolab.com?font=IM+Fell+English&size=17&duration=3000&pause=1000&color=8B6A3A&center=true&vCenter=true&width=750&height=34&lines=Intelligence+Systems+Developer;Geopolitical+Analysis+%E2%80%A2+OSINT+%E2%80%A2+Automation;AI-Assisted+Intelligence" alt="Title"/>
-
-</div>
-
-<br/>
-
-<!-- HERO: gnarled tree left + falling golden leaves (SMIL animateMotion) + info panel right -->
-<div align="center">
-<img src="./hero.svg" width="820" height="400" alt="Intelligence Systems — animated horror tree with falling leaves"/>
+<img src="./ticker.svg" width="860" height="64" alt="Intel ticker"/>
 </div>
 
 <br/>
 
 <div align="center">
+<img src="./hero.svg" width="860" height="420" alt="Roshane Rodney — Intelligence Systems Developer"/>
+</div>
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Roshane%20Rodney-8B0000?style=for-the-badge&logo=linkedin&logoColor=C8A060&labelColor=0d0d0d)](https://linkedin.com/in/roshane-rodney-563638228)
+<br/>
+
+<div align="center">
+<img src="./rule.svg" width="860" height="28" alt=""/>
+</div>
+
+<br/>
+
+<div align="center">
+<img src="./projects.svg" width="860" height="160" alt="Active build pipeline"/>
+</div>
+
+<br/>
+
+<div align="center">
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Roshane%20Rodney-ECB913?style=for-the-badge&logo=linkedin&logoColor=181510&labelColor=181510&color=ECB913)](https://linkedin.com/in/roshane-rodney-563638228)
 &nbsp;
-[![Portfolio](https://img.shields.io/badge/Portfolio-roshanerodney.com-C8A060?style=for-the-badge&labelColor=0d0d0d)](https://roshanerodney.com)
+[![Portfolio](https://img.shields.io/badge/Portfolio-roshanerodney.com-ECB913?style=for-the-badge&labelColor=181510&color=3D3519&logoColor=ECB913)](https://roshanerodney.com)
+&nbsp;
+[![PyPI](https://img.shields.io/badge/PyPI-Aureum01-34D399?style=for-the-badge&logo=pypi&logoColor=181510&labelColor=181510&color=34D399)](https://pypi.org/user/Aureum01)
 
+</div>
+
+<br/>
+
+<div align="center">
+<img src="./rule.svg" width="860" height="28" alt=""/>
 </div>
 
 ---
-
-<div align="center">
-<img src="./drips.svg" width="820" height="36" alt="divider"/>
-</div>
 
 ## Background
 
@@ -85,24 +80,26 @@ I sometimes publish analytical pieces on global systems, geopolitics, and AI (or
 
 ---
 
-<div align="center">
-<img src="./drips.svg" width="820" height="36" alt="divider"/>
-</div>
-
 ## GitHub Activity
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=Aureum01&show_icons=true&theme=dark&bg_color=0d0d0a&border_color=3d1a00&title_color=C8A060&icon_color=8B0000&text_color=8B7040&ring_color=8B0000" width="48%" alt="GitHub stats"/>
+<img src="https://github-readme-stats.vercel.app/api?username=Aureum01&show_icons=true&bg_color=0f0e0a&border_color=3D3519&title_color=ECB913&icon_color=ECB913&text_color=A89D72&ring_color=ECB913&theme=dark" width="48%" alt="GitHub stats"/>
 &nbsp;
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Aureum01&layout=compact&theme=dark&bg_color=0d0d0a&border_color=3d1a00&title_color=C8A060&text_color=8B7040" width="38%" alt="Top languages"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Aureum01&layout=compact&bg_color=0f0e0a&border_color=3D3519&title_color=ECB913&text_color=A89D72&theme=dark" width="38%" alt="Top languages"/>
 
 </div>
 
 <br/>
 
 <div align="center">
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Aureum01&bg_color=0d0d0a&color=C8A060&line=6B0000&point=C8A060&area=true&area_color=2d0000&border_color=3d1a00" width="90%" alt="Activity graph"/>
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=Aureum01&bg_color=0f0e0a&color=ECB913&line=3D3519&point=ECB913&area=true&area_color=221E10&border_color=3D3519" width="90%" alt="Activity graph"/>
+</div>
+
+<br/>
+
+<div align="center">
+<img src="./rule.svg" width="860" height="28" alt=""/>
 </div>
 
 <br/>
@@ -111,10 +108,4 @@ I sometimes publish analytical pieces on global systems, geopolitics, and AI (or
 
 *Building tools that help analysts detect signal within global noise.*
 
-</div>
-
-<br/>
-
-<div align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2d0a00,40:1a0800,100:0b0907&height=90&section=footer" width="100%"/>
 </div>
