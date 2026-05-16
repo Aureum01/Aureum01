@@ -1,77 +1,160 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 860 64" width="860" height="64">
-<foreignObject width="100%" height="100%">
-<div xmlns="http://www.w3.org/1999/xhtml">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=JetBrains+Mono:wght@500;700&display=swap');
-*{margin:0;padding:0;box-sizing:border-box;}
-.bar{
-  width:860px;height:64px;
-  background:#0f0e0a;
-  border:1px solid #3D3519;border-radius:6px;
-  display:flex;align-items:center;
-  font-family:'JetBrains Mono',monospace;
-  overflow:hidden;position:relative;
-}
-.bar::before{
-  content:'';position:absolute;inset:0;
-  background-image:linear-gradient(rgba(236,185,19,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(236,185,19,.02) 1px,transparent 1px);
-  background-size:44px 44px;pointer-events:none;
-}
-.ticker{
-  display:flex;align-items:center;gap:0;
-  animation:scroll 28s linear infinite;
-  white-space:nowrap;position:relative;z-index:1;
-}
-@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.item{
-  display:flex;align-items:center;gap:8px;
-  padding:0 22px;border-right:1px solid #3D3519;
-  height:64px;flex-shrink:0;
-}
-.item-lbl{
-  font-size:.52rem;font-weight:700;letter-spacing:.18em;
-  text-transform:uppercase;color:#6B5F3A;
-}
-.item-val{
-  font-size:.8rem;font-weight:700;color:#ECB913;letter-spacing:.04em;
-}
-.item-val.b{color:#60A5FA;}
-.item-val.g{color:#A78BFA;}
-.item-val.r{color:#34D399;}
-.item-val.red{color:#EF4444;}
-.dot{width:5px;height:5px;border-radius:50%;background:#ECB913;}
-.dot.b{background:#60A5FA;}
-.dot.g{background:#A78BFA;}
-.dot.r{background:#34D399;}
-.dot.live{background:#EF4444;animation:lp 1.2s ease-in-out infinite;}
-@keyframes lp{0%,100%{opacity:1}50%{opacity:.2}}
-</style>
-<div class="bar">
-  <div class="ticker">
-    <!-- set 1 -->
-    <div class="item"><div class="dot live"></div><div class="item-lbl">Status</div><div class="item-val red">ANALYST ACTIVE</div></div>
-    <div class="item"><div class="dot"></div><div class="item-lbl">Specialty</div><div class="item-val">Protective Intel</div></div>
-    <div class="item"><div class="dot b"></div><div class="item-lbl">Stack</div><div class="item-val b">OSINT · AI · Automation</div></div>
-    <div class="item"><div class="dot g"></div><div class="item-lbl">Region Focus</div><div class="item-val g">Global · MENA · EU</div></div>
-    <div class="item"><div class="dot r"></div><div class="item-lbl">Location</div><div class="item-val r">Hjørring · DK</div></div>
-    <div class="item"><div class="dot"></div><div class="item-lbl">Projects</div><div class="item-val">travelrisk · RTIN · misr</div></div>
-    <div class="item"><div class="dot b"></div><div class="item-lbl">Education</div><div class="item-val b">Criminology + CIS · Flagler</div></div>
-    <div class="item"><div class="dot g"></div><div class="item-lbl">Training</div><div class="item-val g">EUX Elektriker · 2027</div></div>
-    <div class="item"><div class="dot"></div><div class="item-lbl">PyPI</div><div class="item-val">ucgen · systemgen</div></div>
-    <div class="item"><div class="dot r"></div><div class="item-lbl">Pathway</div><div class="item-val r">MARTEC → Maskinmester</div></div>
-    <!-- set 2 (duplicate for seamless loop) -->
-    <div class="item"><div class="dot live"></div><div class="item-lbl">Status</div><div class="item-val red">ANALYST ACTIVE</div></div>
-    <div class="item"><div class="dot"></div><div class="item-lbl">Specialty</div><div class="item-val">Protective Intel</div></div>
-    <div class="item"><div class="dot b"></div><div class="item-lbl">Stack</div><div class="item-val b">OSINT · AI · Automation</div></div>
-    <div class="item"><div class="dot g"></div><div class="item-lbl">Region Focus</div><div class="item-val g">Global · MENA · EU</div></div>
-    <div class="item"><div class="dot r"></div><div class="item-lbl">Location</div><div class="item-val r">Hjørring · DK</div></div>
-    <div class="item"><div class="dot"></div><div class="item-lbl">Projects</div><div class="item-val">travelrisk · RTIN · misr</div></div>
-    <div class="item"><div class="dot b"></div><div class="item-lbl">Education</div><div class="item-val b">Criminology + CIS · Flagler</div></div>
-    <div class="item"><div class="dot g"></div><div class="item-lbl">Training</div><div class="item-val g">EUX Elektriker · 2027</div></div>
-    <div class="item"><div class="dot"></div><div class="item-lbl">PyPI</div><div class="item-val">ucgen · systemgen</div></div>
-    <div class="item"><div class="dot r"></div><div class="item-lbl">Pathway</div><div class="item-val r">MARTEC → Maskinmester</div></div>
-  </div>
-</div>
-</div>
-</foreignObject>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 64" width="860" height="64" role="img" aria-label="Animated intelligence ticker">
+  <defs>
+    <clipPath id="clip">
+      <rect x="0" y="0" width="860" height="64" rx="6"/>
+    </clipPath>
+
+    <style>
+      .mono {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      }
+
+      .label {
+        font-size: 8px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        fill: #6B5F3A;
+      }
+
+      .value {
+        font-size: 13px;
+        font-weight: 700;
+        fill: #ECB913;
+      }
+
+      .blue { fill: #60A5FA; }
+      .purple { fill: #A78BFA; }
+      .green { fill: #34D399; }
+      .red { fill: #EF4444; }
+
+      .live {
+        animation: pulse 1.2s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: .25; }
+      }
+
+      .scan {
+        animation: scan 7s linear infinite;
+      }
+
+      @keyframes scan {
+        0% { transform: translateY(-70px); }
+        100% { transform: translateY(130px); }
+      }
+    </style>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="859" height="63" rx="6" fill="#0f0e0a" stroke="#3D3519"/>
+
+  <g opacity="0.18" stroke="#ECB913" stroke-width="1">
+    <path d="M0 22H860M0 44H860"/>
+    <path d="M44 0V64M88 0V64M132 0V64M176 0V64M220 0V64M264 0V64M308 0V64M352 0V64M396 0V64M440 0V64M484 0V64M528 0V64M572 0V64M616 0V64M660 0V64M704 0V64M748 0V64M792 0V64M836 0V64"/>
+  </g>
+
+  <rect class="scan" x="0" y="-64" width="860" height="64" fill="#ECB913" opacity="0.035"/>
+
+  <g clip-path="url(#clip)">
+    <g>
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        from="0 0"
+        to="-1500 0"
+        dur="28s"
+        repeatCount="indefinite"/>
+
+      <!-- Set 1 -->
+      <g transform="translate(0 0)">
+        <g transform="translate(18 0)">
+          <circle class="live" cx="0" cy="32" r="4" fill="#EF4444"/>
+          <text x="14" y="27" class="mono label">STATUS</text>
+          <text x="14" y="44" class="mono value red">ANALYST ACTIVE</text>
+        </g>
+
+        <g transform="translate(185 0)">
+          <circle cx="0" cy="32" r="4" fill="#ECB913"/>
+          <text x="14" y="27" class="mono label">SPECIALTY</text>
+          <text x="14" y="44" class="mono value">PROTECTIVE INTEL</text>
+        </g>
+
+        <g transform="translate(380 0)">
+          <circle cx="0" cy="32" r="4" fill="#60A5FA"/>
+          <text x="14" y="27" class="mono label">STACK</text>
+          <text x="14" y="44" class="mono value blue">OSINT · AI · AUTOMATION</text>
+        </g>
+
+        <g transform="translate(615 0)">
+          <circle cx="0" cy="32" r="4" fill="#A78BFA"/>
+          <text x="14" y="27" class="mono label">REGION FOCUS</text>
+          <text x="14" y="44" class="mono value purple">GLOBAL · MENA · EU</text>
+        </g>
+
+        <g transform="translate(830 0)">
+          <circle cx="0" cy="32" r="4" fill="#34D399"/>
+          <text x="14" y="27" class="mono label">LOCATION</text>
+          <text x="14" y="44" class="mono value green">HJØRRING · DK</text>
+        </g>
+
+        <g transform="translate(1020 0)">
+          <circle cx="0" cy="32" r="4" fill="#ECB913"/>
+          <text x="14" y="27" class="mono label">PROJECTS</text>
+          <text x="14" y="44" class="mono value">TRAVELRISK · RTIN · MISR</text>
+        </g>
+
+        <g transform="translate(1250 0)">
+          <circle cx="0" cy="32" r="4" fill="#60A5FA"/>
+          <text x="14" y="27" class="mono label">EDUCATION</text>
+          <text x="14" y="44" class="mono value blue">CRIMINOLOGY + CIS · FLAGLER</text>
+        </g>
+      </g>
+
+      <!-- Set 2 duplicate for loop -->
+      <g transform="translate(1500 0)">
+        <g transform="translate(18 0)">
+          <circle class="live" cx="0" cy="32" r="4" fill="#EF4444"/>
+          <text x="14" y="27" class="mono label">STATUS</text>
+          <text x="14" y="44" class="mono value red">ANALYST ACTIVE</text>
+        </g>
+
+        <g transform="translate(185 0)">
+          <circle cx="0" cy="32" r="4" fill="#ECB913"/>
+          <text x="14" y="27" class="mono label">SPECIALTY</text>
+          <text x="14" y="44" class="mono value">PROTECTIVE INTEL</text>
+        </g>
+
+        <g transform="translate(380 0)">
+          <circle cx="0" cy="32" r="4" fill="#60A5FA"/>
+          <text x="14" y="27" class="mono label">STACK</text>
+          <text x="14" y="44" class="mono value blue">OSINT · AI · AUTOMATION</text>
+        </g>
+
+        <g transform="translate(615 0)">
+          <circle cx="0" cy="32" r="4" fill="#A78BFA"/>
+          <text x="14" y="27" class="mono label">REGION FOCUS</text>
+          <text x="14" y="44" class="mono value purple">GLOBAL · MENA · EU</text>
+        </g>
+
+        <g transform="translate(830 0)">
+          <circle cx="0" cy="32" r="4" fill="#34D399"/>
+          <text x="14" y="27" class="mono label">LOCATION</text>
+          <text x="14" y="44" class="mono value green">HJØRRING · DK</text>
+        </g>
+
+        <g transform="translate(1020 0)">
+          <circle cx="0" cy="32" r="4" fill="#ECB913"/>
+          <text x="14" y="27" class="mono label">PROJECTS</text>
+          <text x="14" y="44" class="mono value">TRAVELRISK · RTIN · MISR</text>
+        </g>
+
+        <g transform="translate(1250 0)">
+          <circle cx="0" cy="32" r="4" fill="#60A5FA"/>
+          <text x="14" y="27" class="mono label">EDUCATION</text>
+          <text x="14" y="44" class="mono value blue">CRIMINOLOGY + CIS · FLAGLER</text>
+        </g>
+      </g>
+    </g>
+  </g>
 </svg>
