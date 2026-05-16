@@ -33,7 +33,7 @@
 &nbsp;
 [![Portfolio](https://img.shields.io/badge/Portfolio-roshanerodney.com-ECB913?style=for-the-badge&labelColor=181510&color=3D3519&logoColor=ECB913)](https://roshanerodney.com)
 &nbsp;
-[![PyPI](https://img.shields.io/badge/PyPI-Aureum01-34D399?style=for-the-badge&logo=pypi&logoColor=181510&labelColor=181510&color=34D399)](https://pypi.org/user/Aureum01)
+[![PyPI](https://img.shields.io/badge/PyPI-craber-34D399?style=for-the-badge&logo=pypi&logoColor=181510&labelColor=181510&color=34D399)](https://pypi.org/user/craber/)
 
 </div>
 
